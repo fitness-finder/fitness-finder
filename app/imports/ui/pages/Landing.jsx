@@ -1,59 +1,101 @@
 import React from 'react';
-import { Grid, Image, Container, Header } from 'semantic-ui-react';
+import { Grid, Header, Reveal, Image } from 'semantic-ui-react';
 
-/** Renders a color-blocked static landing page. */
+const styles1 = {
+  textAlign: 'center',
+};
+const styles2 = {
+  width: '100%',
+};
+
+/** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-      <div id="landing-page">
-        <div className='landing-green-background'>
-          <Container textAlign='center'>
-            <Header style={{ paddingTop: '20px', color: 'white', fontSize: '36pt' }} as='h1'>
-                Welcome to Bowfolios
-            </Header>
-            <Header style={{ paddingBottom: '20px', color: 'white' }} as='h3'>
-                Profiles, projects, and interest areas for the UH Community
-            </Header>
-          </Container>
-        </div>
-        <div className='landing-white-background'>
-          <Header style={{ color: '#376551' }} as='h2' textAlign='center'>Start by making your profile....</Header>
-          <Grid container stackable columns='equal' textAlign='center'>
+      <div className="parent">
+        <div className="header-background">
+          <Grid verticalAlign='middle' textAlign='center' container>
             <Grid.Column>
-              <Image src="/images/home-page.png"/>
-            </Grid.Column>
-            <Grid.Column>
-              <Image src="/images/profiles-page.png"/>
+              <Header style={{ paddingTop: '100px', color: 'white', fontSize: '45pt' }} as='h1'>
+                Fitness Finder
+              </Header>
+              <Header style={{ paddingBottom: '80px', color: 'white', fontSize: '25pt' }} as='h3'>
+                Your fitness journey starts here!
+              </Header>
             </Grid.Column>
           </Grid>
         </div>
-        <div className='landing-green-background'>
-          <Header style={{ color: 'white' }} as='h2' textAlign='center'>...then add your projects</Header>
-          <Grid container stackable columns='equal' textAlign='center'>
-            <Grid.Column>
-              <Image src="/images/add-project-page.png"/>
+        <div className="middle-background">
+          <Grid container centered stackable columns={3}>
+            <Grid.Column textAlign='center'>
+              <Header as="h1" inverted>Stay Healthy</Header>
+              <div style={styles1}>
+                <Reveal animated="fade">
+                  <Reveal.Content visible style={styles2}>
+                    <Image
+                      src="https://static01.nyt.com/images/2022/01/03/realestate/04fix1/oakImage-1641226833782-mediumSquareAt3X.jpg"
+                      size="medium"
+                      centered
+                    />
+                  </Reveal.Content>
+                  <Reveal.Content hidden style={styles2}>
+                    <Image
+                      src="https://react.semantic-ui.com/images/avatar/large/ade.jpg"
+                      size="medium"
+                      centered
+                    />
+                  </Reveal.Content>
+                </Reveal>
+              </div>
             </Grid.Column>
-            <Grid.Column>
-              <Image src="/images/projects-page.png"/>
-            </Grid.Column>
-          </Grid>
-        </div>
-        <div className='landing-white-background'>
-          <Header style={{ color: '#376551' }} as='h2' textAlign='center'>
-              Connect to people and projects with shared interests!
-          </Header>
-          <Grid container stackable columns='equal' textAlign='center'>
-            <Grid.Column>
-              <Image src="/images/interests-page.png"/>
-            </Grid.Column>
-            <Grid.Column>
-              <Image src="/images/filter-page.png"/>
-            </Grid.Column>
-          </Grid>
-        </div>
 
+            <Grid.Column textAlign='center'>
+              <Header as="h1" inverted>Make Friends</Header>
+              <div style={styles1}>
+                <Reveal animated="fade">
+                  <Reveal.Content visible style={styles2}>
+                    <Image
+                      src="https://static01.nyt.com/images/2021/06/07/us/07xp-polo/07xp-polo-mediumSquareAt3X.jpg"
+                      size="medium"
+                      centered
+                    />
+                  </Reveal.Content>
+                  <Reveal.Content hidden style={styles2}>
+                    <Image
+                      src="https://react.semantic-ui.com/images/avatar/large/ade.jpg"
+                      size="medium"
+                      centered
+                    />
+                  </Reveal.Content>
+                </Reveal>
+              </div>
+            </Grid.Column>
+
+            <Grid.Column textAlign='center'>
+              <Header as="h1" inverted>Explore Interests</Header>
+              <div style={styles1}>
+                <Reveal animated="fade">
+                  <Reveal.Content visible style={styles2}>
+                    <Image
+                      src="https://www.adventure-journal.com/wp-content/uploads/2014/03/MorganMaassen_Instagram_2.jpg"
+                      size="medium"
+                      centered
+                    />
+                  </Reveal.Content>
+                  <Reveal.Content hidden style={styles2}>
+                    <Image
+                      src="images/pic.png"
+                      alt="Pls help"
+                      size="medium"
+                      centered
+                    />
+                  </Reveal.Content>
+                </Reveal>
+              </div>
+            </Grid.Column>
+          </Grid>
+        </div>
       </div>
-
     );
   }
 }

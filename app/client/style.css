@@ -20,3 +20,17 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.header-background {
+  background-image: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg");
+}
+
+.middle-background {
+  padding-bottom: 125px;
+  padding-top: 50px;
+}
+
+.parent {
+  background-color: #024731;
+}
+
