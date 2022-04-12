@@ -1,6 +1,39 @@
 {
   "defaultProfiles": [
     {
+      "firstName": "Grayson",
+      "lastName": "Levy",
+      "bio": "I like to run in the morning.",
+      "year": "Junior",
+      "interests": [
+        "Running",
+        "Lifting Weights"
+      ],
+      "Sessions":[
+        "RadGrad"
+      ],
+      "picture": "https://philipmjohnson.github.io/images/philip2.jpeg",
+      "email": "grayson@hawaii.edu"
+
+    }
+
+  ],
+
+  "defaultSessions": [
+    {
+      "title": "Morning Run",
+      "date": "Monday 4/25 6am",
+      "description": "Morning run through waikiki",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "intermediate",
+      "location": "zoo parking lot"
+    }
+    ],
+
+  "defaultProfiles1": [
+    {
       "firstName": "Philip",
       "lastName": "Johnson",
       "bio": "I am a Professor and like to paddle outrigger canoes.",
