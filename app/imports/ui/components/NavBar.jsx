@@ -18,7 +18,7 @@ class NavBar extends React.Component {
           <span className='white-text' style={{ marginLeft: '10px', fontWeight: 800, fontSize: '24px' }}>Fitness Finder</span>
         </Menu.Item>
         {this.props.currentUser ? (
-          <Menu.Item as={NavLink} style={textStyle} id="homeMenuItem" activeClassName="active" exact to="/home" key='home'>Your Profile</Menu.Item>
+          <Menu.Item as={NavLink} style={textStyle} id="yourProfileMenuItem" activeClassName="active" exact to="/yourProfile" key='yourProfile'>Your Profile</Menu.Item>
         ) : ''}
         <Menu.Item as={NavLink} style={textStyle} id="profilesMenuItem" activeClassName="active" exact to="/profiles" key='profiles'>Profiles</Menu.Item>
         {this.props.currentUser ? (

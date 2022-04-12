@@ -18,7 +18,7 @@ import { updateProfileMethod } from '../../startup/both/Methods';
 import RadioField from '../forms/controllers/RadioField';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
-const makeSchema = (allInterests, allProjects) => new SimpleSchema({
+const makeSchema = (allInterests) => new SimpleSchema({
   email: { type: String, label: 'Email', optional: true },
   firstName: { type: String, label: 'First', optional: true },
   lastName: { type: String, label: 'Last', optional: true },
@@ -28,12 +28,10 @@ const makeSchema = (allInterests, allProjects) => new SimpleSchema({
   picture: { type: String, label: 'Picture URL', optional: true },
   interests: { type: Array, label: 'Interests', optional: true },
   'interests.$': { type: String, allowedValues: allInterests },
-  projects: { type: Array, label: 'Projects', optional: true },
-  'projects.$': { type: String, allowedValues: allProjects },
 });
 
 /** Renders the Home Page: what appears after the user logs in. */
-class Home extends React.Component {
+class YourProfile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
@@ -65,7 +63,7 @@ class Home extends React.Component {
     const profile = Profiles.collection.findOne({ email });
     const model = _.extend({}, profile, { interests, projects });
     return (
-      <Grid id="home-page" container centered>
+      <Grid id="your-profile-page" container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Your Profile</Header>
           <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
@@ -82,9 +80,8 @@ class Home extends React.Component {
               </Form.Group>
               <Form.Group widths={'equal'}>
                 <MultiSelectField name='interests' showInlineError={true} placeholder={'Interests'}/>
-                <MultiSelectField name='projects' showInlineError={true} placeholder={'Projects'}/>
               </Form.Group>
-              <SubmitField id='home-page-submit' value='Update'/>
+              <SubmitField id='your-profile-page-submit' value='Update'/>
             </Segment>
           </AutoForm>
         </Grid.Column>
@@ -93,7 +90,7 @@ class Home extends React.Component {
   }
 }
 
-Home.propTypes = {
+YourProfile.propTypes = {
   ready: PropTypes.bool.isRequired,
 };
 
@@ -108,4 +105,4 @@ export default withTracker(() => {
   return {
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
   };
-})(Home);
+})(YourProfile);
