@@ -21,18 +21,17 @@ class NavBar extends React.Component {
           <Menu.Item as={NavLink} style={textStyle} id="homeMenuItem" activeClassName="active" exact to="/home" key='home'>Home</Menu.Item>
         ) : ''}
         <Menu.Item as={NavLink} style={textStyle} id="profilesMenuItem" activeClassName="active" exact to="/profiles" key='profiles'>Profiles</Menu.Item>
+        {this.props.currentUser ? (
+          [<Menu.Item as={NavLink} style={textStyle} id="addProjectMenuItem" activeClassName="active" exact to="/addProject" key='addP'>Add Session</Menu.Item>]
+        ) : ''}
         <Menu.Item as={NavLink} style={textStyle} id="projectsMenuItem" activeClassName="active" exact to="/projects" key='projects'>Find a Session</Menu.Item>
         <Menu.Item as={NavLink} style={textStyle} id="interestsMenuItem" activeClassName="active" exact to="/interests" key='interests'>Interests</Menu.Item>
-        {this.props.currentUser ? (
-          [<Menu.Item as={NavLink} style={textStyle} id="addProjectMenuItem" activeClassName="active" exact to="/addProject" key='addP'>Calendar</Menu.Item>,
-            <Menu.Item as={NavLink} style={textStyle} id="filterMenuItem" activeClassName="active" exact to="/filter" key='filter'>Search</Menu.Item>]
-        ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item as={NavLink} style={textStyle} id="adminMenuItem" activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
         ) : ''}
         <Menu.Item style={textStyle} position="right">
           {this.props.currentUser === '' ? (
-            <Dropdown id="login-dropdown" className='bowfolio-green' text="Login" pointing="top right" icon={'user'}>
+            <Dropdown id="login-dropdown" style={textStyle} text="Login" pointing="top right" icon={'user'}>
               <Dropdown.Menu>
                 <Dropdown.Item id="login-dropdown-sign-in" icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
                 <Dropdown.Item id="login-dropdown-sign-up" icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
