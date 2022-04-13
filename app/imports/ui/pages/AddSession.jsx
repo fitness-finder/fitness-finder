@@ -20,6 +20,7 @@ import { Projects } from '../../api/projects/Projects';
 const makeSchema = (allInterests, allParticipants) => new SimpleSchema({
   name: String,
   description: String,
+  location: String,
   interests: { type: Array, label: 'Interests', optional: false },
   'interests.$': { type: String, allowedValues: allInterests },
   participants: { type: Array, label: 'Participants', optional: true },
