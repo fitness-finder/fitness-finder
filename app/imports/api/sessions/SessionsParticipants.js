@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Encapsulates state and variable values for this collection. */
-class SessionsInterestsCollection {
+class SessionsParticipantsCollection {
   constructor() {
     // The name of this collection.
     this.name = 'SessionsInterestsCollection';
@@ -12,7 +12,8 @@ class SessionsInterestsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       sessionID: String,
-      interest: String,
+      // array of participants names
+      participants: [String],
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);
@@ -22,4 +23,4 @@ class SessionsInterestsCollection {
   }
 }
 
-export const SessionsInterests = new SessionsInterestsCollection();
+export const SessionsParticipants = new SessionsParticipantsCollection();
