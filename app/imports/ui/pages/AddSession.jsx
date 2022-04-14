@@ -15,20 +15,22 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
+import RadioField from '../forms/controllers/RadioField';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
-const makeSchema = (allInterests, allParticipants) => new SimpleSchema({
-  name: String,
+const makeSchema = (allInterests) => new SimpleSchema({
+  title: String,
   description: String,
   location: String,
+  date: String,
   interests: { type: Array, label: 'Interests', optional: false },
   'interests.$': { type: String, allowedValues: allInterests },
-  participants: { type: Array, label: 'Participants', optional: true },
-  'participants.$': { type: String, allowedValues: allParticipants },
+  skillLevel: { type: Array, label: 'Skill Level', optional: true },
+  'skillLevel.$': { type: String, allowedValues: ['beginner', 'intermediate', 'advanced'] },
 });
 
 /** Renders the Page for adding a document. */
-class AddProject extends React.Component {
+class AddSession extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -49,19 +51,20 @@ class AddProject extends React.Component {
     const formSchema = makeSchema(allInterests, allParticipants);
     const bridge = new SimpleSchema2Bridge(formSchema);
     return (
-      <Grid id="add-project-page" container centered>
+      <Grid id="add-session-page" container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Session</Header>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
             <Segment>
               <Form.Group widths={'equal'}>
-                <TextField id='name' name='name' showInlineError={true} placeholder='Session Title'/>
-                <TextField id='name' name='name' showInlineError={true} placeholder='Location'/>
+                <TextField id='title' name='title' showInlineError={true} placeholder='Session Title'/>
+                <TextField id='location' name='location' showInlineError={true} placeholder='Location'/>
+                <TextField id='date' name='date' showInlineError={true} placeholder='Date'/>
               </Form.Group>
               <LongTextField id='description' name='description' placeholder='Describe the session here'/>
               <Form.Group widths={'equal'}>
                 <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
-                <MultiSelectField id='participants' name='participants' showInlineError={true} placeholder={'Skill Level'}/>
+                <RadioField name='skillLevel' showInlineError={true} placeholder={'Skill Level'}/>
               </Form.Group>
               <SubmitField id='submit' value='Submit'/>
               <ErrorsField/>
@@ -73,7 +76,7 @@ class AddProject extends React.Component {
   }
 }
 
-AddProject.propTypes = {
+AddSession.propTypes = {
   ready: PropTypes.bool.isRequired,
 };
 
@@ -88,4 +91,4 @@ export default withTracker(() => {
   return {
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
   };
-})(AddProject);
+})(AddSession);
