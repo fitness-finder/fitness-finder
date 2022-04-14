@@ -27,7 +27,8 @@
 }
 
 .header-background {
-  background-image: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg");
+  background: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .middle-background {
