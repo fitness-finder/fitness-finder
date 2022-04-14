@@ -1,7 +1,12 @@
 /* Custom site-wide CSS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .bowfolio-green {
   color:  #376551;
+}
+
+.white-text {
+  color: white;
 }
 
 .landing-green-background {
@@ -20,3 +25,17 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.header-background {
+  background-image: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg");
+}
+
+.middle-background {
+  padding-bottom: 125px;
+  padding-top: 50px;
+}
+
+.parent {
+  background-color: #024731;
+}
+
