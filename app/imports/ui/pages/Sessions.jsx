@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Loader, Card, Image, Label } from 'semantic-ui-react';
+import { Container, Loader, Card, Image, Label, Button } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
@@ -22,7 +22,6 @@ function getProjectData(name) {
 const MakeCard = (props) => (
   <Card>
     <Card.Content>
-      <Image floated='left' avatar src={props.project.picture}/>
       <Card.Header style={{ marginTop: '0px' }}>{props.project.name}</Card.Header>
       <Card.Meta>
         <span className='date'>{props.project.title}</span>
@@ -37,6 +36,11 @@ const MakeCard = (props) => (
     </Card.Content>
     <Card.Content extra>
       {_.map(props.project.participants, (p, index) => <Image key={index} circular size='mini' src={p}/>)}
+    </Card.Content>
+    <Card.Content>
+      <Button class='ui button'>
+        Join Session
+      </Button>
     </Card.Content>
   </Card>
 );
