@@ -7,6 +7,11 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
+import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
+import { SessionsInterests } from '../../api/sessions/SessionsInterests';
+import { Sessions } from '../../api/sessions/Sessions';
 
 /* eslint-disable no-console */
 
@@ -47,13 +52,33 @@ function addProject({ name, homepage, description, interests, picture }) {
   interests.map(interest => addInterest(interest));
 }
 
-/** Initialize DB if it appears to be empty (i.e. no users defined.) */
+function addSession({ title, date, description, interests, skillLevel, location, owner }) {
+  console.log(`Defining session ${title}`);
+  Sessions.collection.insert({ title, date, description, skillLevel, location });
+  interests.map(interest => SessionsInterests.collection.insert({ sessionID: , interest }));
+  // Make sure interests are defined in the Interests collection if they weren't already.
+  interests.map(interest => addInterest(interest));
+}
+
+/** Initialize DB if it appears to be empty (i.e. no users defined.)
 if (Meteor.users.find().count() === 0) {
   if (Meteor.settings.defaultProjects && Meteor.settings.defaultProfiles1) {
     console.log('Creating the default profiles');
     Meteor.settings.defaultProfiles1.map(profile => addProfile(profile));
     console.log('Creating the default projects');
     Meteor.settings.defaultProjects.map(project => addProject(project));
+  } else {
+    console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
+  }
+}
+ */
+
+if (Meteor.users.find().count() === 0) {
+  if (Meteor.settings.defaultSessions && Meteor.settings.defaultProfiles) {
+    console.log('Creating the default profiles');
+    Meteor.settings.defaultProfiles.map(profile => addProfile(profile));
+    console.log('Creating the default projects');
+    Meteor.settings.defaultSessionss.map(session => addSession(session));
   } else {
     console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
   }
