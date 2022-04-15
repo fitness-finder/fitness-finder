@@ -26,7 +26,7 @@ const makeSchema = (allInterests) => new SimpleSchema({
   interests: { type: Array, label: 'Interests', optional: false },
   'interests.$': { type: String, allowedValues: allInterests },
   skillLevel: { type: Array, label: 'Skill Level', optional: true },
-  'skillLevel.$': { type: String, allowedValues: ['beginner', 'intermediate', 'advanced'] },
+  'skillLevel.$': { type: String, allowedValues: ['Beginner', 'Intermediate', 'Advanced'] },
 });
 
 /** Renders the Page for adding a document. */
@@ -54,7 +54,7 @@ class AddSession extends React.Component {
       <Grid id="add-session-page" container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Session</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
             <Segment>
               <Form.Group widths={'equal'}>
                 <TextField id='title' name='title' showInlineError={true} placeholder='Session Title'/>
@@ -64,7 +64,7 @@ class AddSession extends React.Component {
               <LongTextField id='description' name='description' placeholder='Describe the session here'/>
               <Form.Group widths={'equal'}>
                 <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
-                <RadioField name='skillLevel' showInlineError={true} placeholder={'Skill Level'}/>
+                <RadioField name='skillLevel' inline='true' showInlineError={true} placeholder={'Skill Level'}/>
               </Form.Group>
               <SubmitField id='submit' value='Submit'/>
               <ErrorsField/>
