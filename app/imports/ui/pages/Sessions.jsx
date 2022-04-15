@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Loader, Card, Image, Label, Button } from 'semantic-ui-react';
+import { Container, Loader, Card, Label, Button, List } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
@@ -14,8 +14,9 @@ function getProjectData(name) {
   const data = Projects.collection.findOne({ name });
   const interests = _.pluck(ProjectsInterests.collection.find({ project: name }).fetch(), 'interest');
   const profiles = _.pluck(ProfilesProjects.collection.find({ project: name }).fetch(), 'profile');
-  const profilePictures = profiles.map(profile => Profiles.collection.findOne({ email: profile }).picture);
-  return _.extend({ }, data, { interests, participants: profilePictures });
+  const profileName = profiles.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
+  } ${Profiles.collection.findOne({ email: profile }).lastName}`));
+  return _.extend({ }, data, { interests, participants: profileName });
 }
 
 /** Component for layout out a Project Card. */
@@ -35,7 +36,7 @@ const MakeCard = (props) => (
         (interest, index) => <Label key={index} size='tiny' color='teal'>{interest}</Label>)}
     </Card.Content>
     <Card.Content extra>
-      {_.map(props.project.participants, (p, index) => <Image key={index} circular size='mini' src={p}/>)}
+      {_.map(props.project.participants, (p, index) => <List key={index} size='tiny' color='teal'>{p}</List>)}
     </Card.Content>
     <Card.Content>
       <Button class='ui button'>
