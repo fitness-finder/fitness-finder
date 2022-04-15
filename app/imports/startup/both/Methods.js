@@ -4,6 +4,10 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
+/** import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import { Sessions } from '../../api/sessions/Sessions';
+import { SessionsInterests } from '../../api/sessions/SessionsInterests';
+*/
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -37,8 +41,8 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({ email, firstName, lastName, bio, title, picture, interests, projects }) {
-    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, title, picture } });
+  'Profiles.update'({ email, firstName, lastName, bio, picture, interests, projects, year }) {
+    Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, picture, year } });
     ProfilesInterests.collection.remove({ profile: email });
     ProfilesProjects.collection.remove({ profile: email });
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
@@ -65,4 +69,23 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addProjectMethod };
+/**
+const addSessionMethod = 'Sessions.add';
+
+Meteor.methods({
+  'Sessions.add'({ title, date, description, interests, skillLevel, location }) {
+    Sessions.collection.insert({ title, date, description, skillLevel, location });
+    ProfilesSessions.collection.remove({ project: name });
+    SessionsInterests.collection.remove({ project: name });
+    if (interests) {
+      interests.map((interest) => ProjectsInterests.collection.insert({ project: name, interest }));
+    } else {
+      throw new Meteor.Error('At least one interest is required.');
+    }
+    if (participants) {
+      participants.map((participant) => ProfilesProjects.collection.insert({ project: name, profile: participant }));
+    }
+  },
+}); */
+
+export { updateProfileMethod, addProjectMethod /** , addSessionMethod */ };

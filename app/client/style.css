@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .bowfolio-green {
-  color:  #376551;
+  color:  #024731;
 }
 
 .white-text {
@@ -10,14 +10,14 @@
 }
 
 .landing-green-background {
-  background-color: #376551;
+  background-color: #024731;
   color: white;
   padding-top: 20px;
 }
 
 .landing-white-background {
   background-color: white;
-  color: #376551;
+  color: #024731;
   padding-top: 20px;
 }
 
@@ -27,7 +27,8 @@
 }
 
 .header-background {
-  background-image: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg");
+  background: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg") no-repeat center center;
+  background-size: 100% 100%;
 }
 
 .middle-background {
