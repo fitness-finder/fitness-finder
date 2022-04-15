@@ -1,6 +1,81 @@
 {
   "defaultProfiles": [
     {
+      "firstName": "Grayson",
+      "lastName": "Levy",
+      "bio": "I like to run in the morning.",
+      "year": "Junior",
+      "interests": [
+        "Running",
+        "Lifting Weights"
+      ],
+      "Sessions":[
+
+      ],
+      "picture": "https://philipmjohnson.github.io/images/philip2.jpeg",
+      "email": "grayson@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "bio": "I like to hike.",
+      "year": "Freshman",
+      "interests": [
+        "Hiking",
+        "Lifting Weights"
+      ],
+      "Sessions":[
+
+      ],
+      "picture": "https://philipmjohnson.github.io/images/philip2.jpeg",
+      "email": "John@hawaii.edu"
+
+    }
+
+  ],
+
+  "defaultSessions": [
+    {
+      "title": "Morning Run",
+      "date": "Monday 4/25 6am",
+      "description": "Morning run through waikiki",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "intermediate",
+      "location": "zoo parking lot",
+      "owner": "grayson@hawaii.edu"
+    },
+
+    {
+      "title": "Evening Run",
+      "date": "Monday 4/25 6pm",
+      "description": "Evening run through waikiki",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "intermediate",
+      "location": "zoo parking lot",
+      "owner": "grayson@hawaii.edu"
+    },
+
+    {
+      "title": "Sunrise Hike",
+      "date": "Tuesday 4/26 5am",
+      "description": "Sunrise hike at the Pali notches",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "advanced",
+      "location": "Pali Hwy Lookout",
+      "owner": "John@hawaii.edu"
+    }
+    ],
+
+  "defaultProfiles1": [
+    {
       "firstName": "Philip",
       "lastName": "Johnson",
       "bio": "I am a Professor and like to paddle outrigger canoes.",

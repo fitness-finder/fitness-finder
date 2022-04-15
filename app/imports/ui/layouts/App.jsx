@@ -7,9 +7,9 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import Home from '../pages/Home';
+import YourProfile from '../pages/YourProfile';
 import Profiles from '../pages/Profiles';
-import AddProject from '../pages/AddProject';
+import AddSession from '../pages/AddSession';
 import Projects from '../pages/Projects';
 import Filter from '../pages/Filter';
 import Interests from '../pages/Interests';
@@ -28,11 +28,11 @@ class App extends React.Component {
           <div style={{ paddingTop: '20px', paddingBottom: '30px' }}>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <ProtectedRoute path="/home" component={Home}/>
+              <ProtectedRoute path="/yourprofile" component={YourProfile}/>
               <Route path="/profiles" component={Profiles}/>
               <Route path="/projects" component={Projects}/>
               <Route path="/interests" component={Interests}/>
-              <ProtectedRoute path="/addproject" component={AddProject}/>
+              <ProtectedRoute path="/addProject" component={AddSession}/>
               <ProtectedRoute path="/filter" component={Filter}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
