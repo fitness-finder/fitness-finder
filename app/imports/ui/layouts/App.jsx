@@ -10,7 +10,7 @@ import Landing from '../pages/Landing';
 import YourProfile from '../pages/YourProfile';
 import Profiles from '../pages/Profiles';
 import AddSession from '../pages/AddSession';
-import Projects from '../pages/Projects';
+import Sessions from '../pages/Sessions';
 import Filter from '../pages/Filter';
 import Interests from '../pages/Interests';
 import NotFound from '../pages/NotFound';
@@ -30,9 +30,9 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <ProtectedRoute path="/yourprofile" component={YourProfile}/>
               <Route path="/profiles" component={Profiles}/>
-              <Route path="/projects" component={Projects}/>
+              <Route path="/sessions" component={Sessions}/>
               <Route path="/interests" component={Interests}/>
-              <ProtectedRoute path="/addProject" component={AddSession}/>
+              <ProtectedRoute path="/addSession" component={AddSession}/>
               <ProtectedRoute path="/filter" component={Filter}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>

@@ -43,7 +43,7 @@ class NavBar extends React.Component {
             id="addProjectMenuItem"
             activeClassName="active"
             exact
-            to="/addProject"
+            to="/addSession"
             key='addP'>Add Session
           </Menu.Item>]
         ) : ''}
@@ -53,8 +53,8 @@ class NavBar extends React.Component {
           id="projectsMenuItem"
           activeClassName="active"
           exact
-          to="/projects"
-          key='projects'>Find a Session
+          to="/sessions"
+          key='sessions'>Find a Session
         </Menu.Item>
         <Menu.Item
           as={NavLink}

@@ -14,18 +14,19 @@ function getProfileData(email) {
   const data = Profiles.collection.findOne({ email });
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
   const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
-  const projectPictures = projects.map(project => Projects.collection.findOne({ name: project }).picture);
+  const projectPictures = projects.map(project => Projects.collection.findOne({ name: project }).name);
   // console.log(_.extend({ }, data, { interests, projects: projectPictures }));
-  return _.extend({ }, data, { interests, projects: projectPictures });
+  return _.extend({}, data, { interests, projects: projectPictures });
 }
 
 /** Component for layout out a Profile Card. */
 const MakeCard = (props) => (
   <Card>
     <Card.Content>
-      <Image floated='right' size='mini' src={props.profile.picture} />
+      <Image floated='right' size='mini' src={props.profile.picture}/>
       <Card.Header>{props.profile.firstName} {props.profile.lastName}</Card.Header>
       <Card.Meta>
+        <Header as='h6'>&quot;GRADE YEAR&quot;</Header>
         <span className='date'>{props.profile.title}</span>
       </Card.Meta>
       <Card.Description>
@@ -33,12 +34,16 @@ const MakeCard = (props) => (
       </Card.Description>
     </Card.Content>
     <Card.Content extra>
+      <Header as='h5'>Interests</Header>
       {_.map(props.profile.interests,
         (interest, index) => <Label key={index} size='tiny' color='teal'>{interest}</Label>)}
     </Card.Content>
     <Card.Content extra>
-      <Header as='h5'>Projects</Header>
-      {_.map(props.profile.projects, (project, index) => <Image key={index} size='mini' src={project}/>)}
+      <Header as='h5'>Sessions</Header>
+      {_.map(props.profile.projects, (project, index) => <Label key={index} size='tiny' color='teal'>{project}</Label>)}
+    </Card.Content>
+    <Card.Content extra>
+      <Header as='h5'>Joined Sessions</Header>
     </Card.Content>
   </Card>
 );
