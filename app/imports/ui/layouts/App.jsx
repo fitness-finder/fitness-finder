@@ -30,7 +30,7 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <ProtectedRoute path="/yourprofile" component={YourProfile}/>
               <Route path="/profiles" component={Profiles}/>
-              <Route path="/projects" component={Sessions}/>
+              <Route path="/sessions" component={Sessions}/>
               <Route path="/interests" component={Interests}/>
               <ProtectedRoute path="/addProject" component={AddSession}/>
               <ProtectedRoute path="/filter" component={Filter}/>
