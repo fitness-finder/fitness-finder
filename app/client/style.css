@@ -24,7 +24,7 @@
 
 .header-background {
   background: url("https://www.thesierralight.com/images/xl/oahurainbowpano1.jpg") no-repeat center center;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .middle-background {
