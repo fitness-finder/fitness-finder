@@ -36,7 +36,7 @@ const MakeCard = (props) => (
         (interest, index) => <Label key={index} size='tiny' color='teal'>{interest}</Label>)}
     </Card.Content>
     <Card.Content extra>
-      {_.map(props.project.participants, (p, index) => <List key={index} size='tiny' color='teal'>{p}</List>)}
+      {_.map(props.project.participants, (p, index) => <List key={index} size='tiny' style={{ color: 'black' }} >{p}</List>)}
     </Card.Content>
     <Card.Content>
       <Button class='ui button'>
