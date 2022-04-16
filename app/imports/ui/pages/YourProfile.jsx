@@ -24,7 +24,7 @@ const makeSchema = (allInterests) => new SimpleSchema({
   lastName: { type: String, label: 'Last', optional: true },
   bio: { type: String, label: 'Biographical statement', optional: true },
   year: { type: Array, label: 'Year', optional: true },
-  'year.$': { type: String, allowedValues: ['freshman', 'sophomore', 'junior', 'senior'] },
+  'year.$': { type: String, allowedValues: ['Freshman', 'Sophomore', 'Junior', 'Senior'] },
   picture: { type: String, label: 'Picture URL', optional: true },
   interests: { type: Array, label: 'Interests', optional: true },
   'interests.$': { type: String, allowedValues: allInterests },
@@ -75,7 +75,7 @@ class YourProfile extends React.Component {
               </Form.Group>
               <LongTextField id='bio' name='bio' placeholder='Write a little bit about yourself.'/>
               <Form.Group widths={'equal'}>
-                <RadioField name='year' inline='true' showInlineError={true} placeholder={'Year'}/>
+                <RadioField id='year' name='year' inline='true' showInlineError={true} placeholder={'Year'}/>
                 <TextField name='picture' showInlineError={true} placeholder={'URL to picture'}/>
               </Form.Group>
               <Form.Group widths={'equal'}>

@@ -9,16 +9,16 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
-import { addProjectMethod } from '../../startup/both/Methods';
+import { addSessionMethod } from '../../startup/both/Methods';
 import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import RadioField from '../forms/controllers/RadioField';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const makeSchema = (allInterests) => new SimpleSchema({
+  owner: { type: String, label: 'Email', optional: false },
   title: String,
   description: String,
   location: String,
@@ -34,11 +34,11 @@ class AddSession extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    Meteor.call(addProjectMethod, data, (error) => {
+    Meteor.call(addSessionMethod, data, (error) => {
       if (error) {
         swal('Error', error.message, 'error');
       } else {
-        swal('Success', 'Project added successfully', 'success').then(() => formRef.reset());
+        swal('Success', 'Session added successfully', 'success').then(() => formRef.reset());
       }
     });
   }
@@ -47,17 +47,18 @@ class AddSession extends React.Component {
   render() {
     let fRef = null;
     const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
-    const allParticipants = _.pluck(Profiles.collection.find().fetch(), 'email');
-    const formSchema = makeSchema(allInterests, allParticipants);
+    const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
+    const model = { owner: Meteor.user().username };
     return (
       <Grid id="add-session-page" container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Session</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+          <AutoForm ref={ref => { fRef = ref; }} model ={model} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
             <Segment>
               <Form.Group widths={'equal'}>
                 <TextField id='title' name='title' showInlineError={true} placeholder='Session Title'/>
+                <TextField id='owner' name='owner' showInlineError={true} placeholder={'email'} disabled/>
                 <TextField id='location' name='location' showInlineError={true} placeholder='Location'/>
                 <TextField id='date' name='date' showInlineError={true} placeholder='Date'/>
               </Form.Group>
@@ -86,9 +87,8 @@ export default withTracker(() => {
   const sub1 = Meteor.subscribe(Interests.userPublicationName);
   const sub2 = Meteor.subscribe(Profiles.userPublicationName);
   const sub3 = Meteor.subscribe(ProfilesInterests.userPublicationName);
-  const sub4 = Meteor.subscribe(ProfilesProjects.userPublicationName);
   const sub5 = Meteor.subscribe(Projects.userPublicationName);
   return {
-    ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
+    ready: sub1.ready() && sub2.ready() && sub3.ready() && sub5.ready(),
   };
 })(AddSession);

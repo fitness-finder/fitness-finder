@@ -1,13 +1,10 @@
 import { Meteor } from 'meteor/meteor';
-import { Projects } from '../../api/projects/Projects';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
-import { ProjectsInterests } from '../../api/projects/ProjectsInterests';
-/** import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { Sessions } from '../../api/sessions/Sessions';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
-*/
+import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -41,18 +38,16 @@ const updateProfileMethod = 'Profiles.update';
  * updated situation specified by the user.
  */
 Meteor.methods({
-  'Profiles.update'({ email, firstName, lastName, bio, picture, interests, projects, year }) {
+  'Profiles.update'({ email, firstName, lastName, bio, picture, interests, year }) {
     Profiles.collection.update({ email }, { $set: { email, firstName, lastName, bio, picture, year } });
     ProfilesInterests.collection.remove({ profile: email });
-    ProfilesProjects.collection.remove({ profile: email });
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
-    projects.map((project) => ProfilesProjects.collection.insert({ profile: email, project }));
   },
 });
+/**
+ const addProjectMethod = 'Projects.add';
 
-const addProjectMethod = 'Projects.add';
-
-/** Creates a new project in the Projects collection, and also updates ProfilesProjects and ProjectsInterests. */
+Creates a new project in the Projects collection, and also updates ProfilesProjects and ProjectsInterests.
 Meteor.methods({
   'Projects.add'({ name, description, picture, interests, participants, homepage }) {
     Projects.collection.insert({ name, description, picture, homepage });
@@ -68,24 +63,22 @@ Meteor.methods({
     }
   },
 });
-
-/**
+ */
 const addSessionMethod = 'Sessions.add';
 
 Meteor.methods({
-  'Sessions.add'({ title, date, description, interests, skillLevel, location }) {
-    Sessions.collection.insert({ title, date, description, skillLevel, location });
-    ProfilesSessions.collection.remove({ project: name });
-    SessionsInterests.collection.remove({ project: name });
+  'Sessions.add'({ title, date, description, interests, skillLevel, location, owner }) {
+    const sessionID = Sessions.collection.insert({ title, date, description, skillLevel, location });
+    ProfilesSessions.collection.insert({ profile: owner, sessionID, session: title });
     if (interests) {
-      interests.map((interest) => ProjectsInterests.collection.insert({ project: name, interest }));
+      interests.map(interest => SessionsInterests.collection.insert({ sessionID, interest }));
     } else {
       throw new Meteor.Error('At least one interest is required.');
     }
-    if (participants) {
-      participants.map((participant) => ProfilesProjects.collection.insert({ project: name, profile: participant }));
-    }
+    SessionsParticipants.collection.insert({ sessionID, participants:
+        (`${Profiles.collection.findOne({ email: owner }).firstName
+        } ${Profiles.collection.findOne({ email: owner }).lastName}`) });
   },
-}); */
+});
 
-export { updateProfileMethod, addProjectMethod /** , addSessionMethod */ };
+export { updateProfileMethod, addSessionMethod };

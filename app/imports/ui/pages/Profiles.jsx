@@ -6,17 +6,17 @@ import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
-import { Projects } from '../../api/projects/Projects';
+import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /** Returns the Profile and associated Projects and Interests associated with the passed user email. */
 function getProfileData(email) {
   const data = Profiles.collection.findOne({ email });
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
-  const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
-  const projectPictures = projects.map(project => Projects.collection.findOne({ name: project }).name);
+  const sessions = _.pluck(ProfilesSessions.collection.find({ profile: email }).fetch(), 'session');
+  const participation = _.pluck(ProfilesParticipation.collection.find({ profile: email }).fetch(), 'session');
   // console.log(_.extend({ }, data, { interests, projects: projectPictures }));
-  return _.extend({}, data, { interests, projects: projectPictures });
+  return _.extend({}, data, { interests, sessions, participation });
 }
 
 /** Component for layout out a Profile Card. */
@@ -26,8 +26,7 @@ const MakeCard = (props) => (
       <Image floated='right' size='mini' src={props.profile.picture}/>
       <Card.Header>{props.profile.firstName} {props.profile.lastName}</Card.Header>
       <Card.Meta>
-        <Header as='h6'>&quot;GRADE YEAR&quot;</Header>
-        <span className='date'>{props.profile.title}</span>
+        <span className='date'>{props.profile.year}</span>
       </Card.Meta>
       <Card.Description>
         {props.profile.bio}
@@ -40,10 +39,11 @@ const MakeCard = (props) => (
     </Card.Content>
     <Card.Content extra>
       <Header as='h5'>Sessions</Header>
-      {_.map(props.profile.projects, (project, index) => <Label key={index} size='tiny' color='teal'>{project}</Label>)}
+      {_.map(props.profile.sessions, (session, index) => <Label key={index} size='tiny' color='teal'>{session}</Label>)}
     </Card.Content>
     <Card.Content extra>
       <Header as='h5'>Joined Sessions</Header>
+      {_.map(props.profile.participation, (session, index) => <Label key={index} size='tiny' color='teal'>{session}</Label>)}
     </Card.Content>
   </Card>
 );
@@ -83,8 +83,8 @@ export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Profiles.userPublicationName);
   const sub2 = Meteor.subscribe(ProfilesInterests.userPublicationName);
-  const sub3 = Meteor.subscribe(ProfilesProjects.userPublicationName);
-  const sub4 = Meteor.subscribe(Projects.userPublicationName);
+  const sub3 = Meteor.subscribe(ProfilesSessions.userPublicationName);
+  const sub4 = Meteor.subscribe(ProfilesParticipation.userPublicationName);
   return {
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
   };

@@ -11,7 +11,7 @@ class SessionsInterestsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      sessionID: String,
+      sessionID: { type: String, index: true, unique: true },
       interest: String,
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.
