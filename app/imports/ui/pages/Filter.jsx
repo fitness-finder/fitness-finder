@@ -80,18 +80,27 @@ class Filter extends React.Component {
     const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const emails = _.pluck(ProfilesInterests.collection.find({ interest: { $in: this.state.interests } }).fetch(), 'profile');
+    const emailsall = _.pluck(Profiles.collection.find().fetch(), 'email');
+    const profileDataAll = emailsall.map(email => getProfileData(email));
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
-      <Container id="filter-page">
-        <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
-          <Segment>
-            <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
-            <SubmitField id='submit' value='Submit'/>
-          </Segment>
-        </AutoForm>
-        <Card.Group style={{ paddingTop: '10px' }}>
-          {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
-        </Card.Group>
+      <Container id="parent">
+        <Container id="filter-page">
+          <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
+            <Segment>
+              <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
+              <SubmitField id='submit' value='Submit'/>
+            </Segment>
+          </AutoForm>
+          <Card.Group style={{ paddingTop: '10px' }}>
+            {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+          </Card.Group>
+        </Container>
+        <Container id="profiles">
+          <Card.Group style={{ paddingTop: '10px' }}>
+            {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+          </Card.Group>
+        </Container>
       </Container>
     );
   }
