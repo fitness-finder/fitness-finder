@@ -1,13 +1,23 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Loader, Card, Image, Label, Header } from 'semantic-ui-react';
+import { Container, Loader, Card, Image, Label, Header, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
+import SimpleSchema from 'simpl-schema';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
+import MultiSelectField from '../forms/controllers/MultiSelectField';
+
+/** Create a schema to specify the structure of the data to appear in the form. */
+const makeSchema = (allInterests) => new SimpleSchema({
+  interests: { type: Array, label: 'Interests', optional: true },
+  'interests.$': { type: String, allowedValues: allInterests },
+});
 
 /** Returns the Profile and associated Projects and Interests associated with the passed user email. */
 function getProfileData(email) {
@@ -63,9 +73,17 @@ class ProfilesPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const emails = _.pluck(Profiles.collection.find().fetch(), 'email');
+    const formSchema = makeSchema(allInterests);
+    const bridge = new SimpleSchema2Bridge(formSchema);
     const profileData = emails.map(email => getProfileData(email));
     return (
       <Container id="profiles-page">
+        <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
+          <Segment>
+            <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
+            <SubmitField id='submit' value='Submit'/>
+          </Segment>
+        </AutoForm>
         <Card.Group>
           {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
         </Card.Group>
