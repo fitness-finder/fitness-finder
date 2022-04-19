@@ -12,6 +12,7 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
+import { Interests } from '../../api/interests/Interests';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const makeSchema = (allInterests) => new SimpleSchema({
@@ -72,6 +73,7 @@ class ProfilesPage extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
     const emails = _.pluck(Profiles.collection.find().fetch(), 'email');
     const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
