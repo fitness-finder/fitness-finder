@@ -65,9 +65,7 @@ class SessionsPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const sessions = _.pluck(Sessions.collection.find().fetch(), '_id');
-    console.log(`${sessions}`);
     const sessionData = sessions.map(sessionID => getSessionData(sessionID));
-    console.log(`${sessionData}`);
     return (
       <Container id="sessions-page">
         <Card.Group>
