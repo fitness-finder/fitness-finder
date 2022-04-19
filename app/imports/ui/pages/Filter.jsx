@@ -13,6 +13,8 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
+import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const makeSchema = (allInterests) => new SimpleSchema({
@@ -23,9 +25,10 @@ const makeSchema = (allInterests) => new SimpleSchema({
 function getProfileData(email) {
   const data = Profiles.collection.findOne({ email });
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
-  const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
-  const projectPictures = projects.map(project => Projects.collection.findOne({ name: project }).picture);
-  return _.extend({ }, data, { interests, projects: projectPictures });
+  const sessions = _.pluck(ProfilesSessions.collection.find({ profile: email }).fetch(), 'session');
+  const participation = _.pluck(ProfilesParticipation.collection.find({ profile: email }).fetch(), 'session');
+  // console.log(_.extend({ }, data, { interests, projects: projectPictures }));
+  return _.extend({}, data, { interests, sessions, participation });
 }
 
 /** Component for layout out a Profile Card. */
@@ -89,8 +92,8 @@ class Filter extends React.Component {
     const profileDataAll = emailsall.map(email => getProfileData(email));
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
-      <Container id="parent">
-        <Container id="filter-page">
+      <div id="parent">
+        <Container id="filter-page" style={{ paddingBottom: '35px' }}>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
             <Segment>
               <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
@@ -101,12 +104,15 @@ class Filter extends React.Component {
             {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
           </Card.Group>
         </Container>
-        <Container id="profiles">
-          <Card.Group style={{ paddingTop: '10px' }}>
-            {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
-          </Card.Group>
-        </Container>
-      </Container>
+        <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
+          <Header as="h1" textAlign='center' inverted>All Profiles</Header>
+          <Container id="profile-list">
+            <Card.Group style={{ paddingTop: '10px' }}>
+              {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+            </Card.Group>
+          </Container>
+        </div>
+      </div>
     );
   }
 }
@@ -121,8 +127,8 @@ export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Profiles.userPublicationName);
   const sub2 = Meteor.subscribe(ProfilesInterests.userPublicationName);
-  const sub3 = Meteor.subscribe(ProfilesProjects.userPublicationName);
-  const sub4 = Meteor.subscribe(Projects.userPublicationName);
+  const sub3 = Meteor.subscribe(ProfilesSessions.userPublicationName);
+  const sub4 = Meteor.subscribe(ProfilesParticipation.userPublicationName);
   const sub5 = Meteor.subscribe(Interests.userPublicationName);
   return {
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
