@@ -67,7 +67,12 @@ class ProfilesPage extends React.Component {
     return (
       <Container id="profiles-page">
         <Card.Group>
-          {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+          {_.map(profileData, (profile, index) => {
+            if (profile.firstName) {
+              return <MakeCard key={index} profile={profile}/>;
+            }
+            return null;
+          })}
         </Card.Group>
       </Container>
     );

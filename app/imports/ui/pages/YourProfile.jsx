@@ -52,7 +52,7 @@ class YourProfile extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     const email = Meteor.user().username;
-    // Create the form schema for uniforms. Need to determine all interests and projects for muliselect list.
+    // Create the form schema for uniforms. Need to determine all interests and projects for multiselect list.
     const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
     const allProjects = _.pluck(Projects.collection.find().fetch(), 'name');
     const formSchema = makeSchema(allInterests, allProjects);
@@ -66,6 +66,7 @@ class YourProfile extends React.Component {
       <Grid id="your-profile-page" container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Your Profile</Header>
+          <Header as="h3" textAlign="center">Please fill out form to be displayed in profiles</Header>
           <AutoForm model={model} schema={bridge} onSubmit={data => this.submit(data)}>
             <Segment>
               <Form.Group widths={'equal'}>
