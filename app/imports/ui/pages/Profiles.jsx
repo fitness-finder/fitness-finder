@@ -90,6 +90,7 @@ class ProfilesPage extends React.Component {
     const profileDataAll = emailsall.map(email => getProfileData(email));
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
+
       <div id="parent">
         <Container id="filter-page" style={{ paddingBottom: '35px' }}>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
@@ -99,18 +100,29 @@ class ProfilesPage extends React.Component {
             </Segment>
           </AutoForm>
           <Card.Group style={{ paddingTop: '10px' }}>
-            {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+            {_.map(profileData, (profile, index) => {
+              if (profile.firstName) {
+                return <MakeCard key={index} profile={profile}/>;
+              }
+              return null;
+            })}
           </Card.Group>
         </Container>
         <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
           <Header as="h1" textAlign='center' inverted>All Profiles</Header>
           <Container id="profile-list">
             <Card.Group style={{ paddingTop: '10px' }}>
-              {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+              {_.map(profileDataAll, (profile, index) => {
+                if (profile.firstName) {
+                  return <MakeCard key={index} profile={profile}/>;
+                }
+                return null;
+              })}
             </Card.Group>
           </Container>
         </div>
       </div>
+
     );
   }
 }

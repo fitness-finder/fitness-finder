@@ -16,7 +16,8 @@ class ProfilesCollection {
       lastName: { type: String, optional: true },
       bio: { type: String, optional: true },
       year: { type: String, optional: true },
-      picture: { type: String, optional: true },
+      picture: { type: String, optional: true, defaultValue:
+          'https://www.pngfind.com/pngs/m/676-6764065_default-profile-picture-transparent-hd-png-download.png' },
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.
     this.collection.attachSchema(this.schema);

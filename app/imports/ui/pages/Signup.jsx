@@ -27,11 +27,12 @@ class Signup extends React.Component {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        Profiles.insert({ email }, (err2) => {
+        Profiles.collection.insert({ email }, (err2) => {
           if (err2) {
             this.setState({ error: err2.reason });
           } else {
             this.setState({ error: '', redirectToReferer: true });
+            // console.log('adding profile');
           }
         });
       }
@@ -40,7 +41,7 @@ class Signup extends React.Component {
 
   /** Display the signup form. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/home' } };
+    const { from } = this.props.location.state || { from: { pathname: '/yourprofile' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
