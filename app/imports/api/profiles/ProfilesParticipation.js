@@ -11,7 +11,7 @@ class ProfilesParticipationCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      profile: { type: String, index: true, unique: true },
+      profile: String,
       session: String,
       sessionID: String,
     }, { tracker: Tracker });

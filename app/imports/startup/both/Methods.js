@@ -5,6 +5,7 @@ import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { Sessions } from '../../api/sessions/Sessions';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -44,6 +45,18 @@ Meteor.methods({
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
   },
 });
+
+const joinSessionMethod = 'Session.join';
+
+Meteor.methods({
+  'Session.join'({ email, sessionID }) {
+    ProfilesParticipation.collection.insert({ profile: email, sessionID, session: (Sessions.collection.findOne({ _Id: sessionID }).session) });
+    SessionsParticipants.collection.insert({ sessionID, participants:
+        (`${Profiles.collection.findOne({ email: email }).firstName
+        } ${Profiles.collection.findOne({ email: email }).lastName}`) });
+  },
+});
+
 /**
  const addProjectMethod = 'Projects.add';
 
@@ -81,4 +94,4 @@ Meteor.methods({
   },
 });
 
-export { updateProfileMethod, addSessionMethod };
+export { updateProfileMethod, addSessionMethod, joinSessionMethod };

@@ -8,19 +8,25 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { Sessions } from '../../api/sessions/Sessions';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import { joinSessionMethod } from '../../startup/both/Methods';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /** Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getSessionData(_id) {
   const data = Sessions.collection.findOne({ _id });
-  const interests = _.pluck(SessionsInterests.collection.find({ sessionID: _id }).fetch(), 'interest');
+  const interests = _.pluck(SessionsInterests.collection.find({ sessionID: _id }).fetch(), 'interests');
   const profiles = _.pluck(ProfilesSessions.collection.find({ sessionID: _id }).fetch(), 'profile');
+  const profilesParticipants = _.pluck(ProfilesParticipation.collection.find({ sessionID: _id }).fetch(), 'participants');
   const profileName = profiles.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
-  return _.extend({ }, data, { interests, participants: profileName });
+  const participants = profilesParticipants.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
+  } ${Profiles.collection.findOne({ email: profile }).lastName}`));
+  return _.extend({ }, data, { interests, creator: profileName, participants });
 }
 
 /** Component for layout out a Project Card. */
 const MakeCard = (props) => (
+
   <Card>
     <Card.Content>
       <Card.Header style={{ marginTop: '0px' }}>{props.session.title}</Card.Header>
@@ -40,13 +46,15 @@ const MakeCard = (props) => (
     </Card.Content>
     <Card.Content extra>
       <Header as='h5'>Creator</Header>
+      {_.map(props.session.creator, (p, index) => <List key={index} size='tiny' style={{ color: 'black' }} >{p}</List>)}
+    </Card.Content>
+    <Card.Content extra>
+      <Header as='h5'>Participants</Header>
       {_.map(props.session.participants, (p, index) => <List key={index} size='tiny' style={{ color: 'black' }} >{p}</List>)}
     </Card.Content>
-    <Card.Content>
-      <Button>
-        Join Session
-      </Button>
-    </Card.Content>
+    <Button onClick={this.handleClick}>
+      Join Session
+    </Button>
   </Card>
 );
 
@@ -56,6 +64,15 @@ MakeCard.propTypes = {
 
 /** Renders the Project Collection as a set of Cards. */
 class SessionsPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log('TESTING');
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -87,7 +104,8 @@ export default withTracker(() => {
   const sub2 = Meteor.subscribe(Sessions.userPublicationName);
   const sub3 = Meteor.subscribe(SessionsInterests.userPublicationName);
   const sub4 = Meteor.subscribe(Profiles.userPublicationName);
+  const sub5 = Meteor.subscribe(ProfilesParticipation.userPublicationName);
   return {
-    ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready(),
+    ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
   };
 })(SessionsPage);
