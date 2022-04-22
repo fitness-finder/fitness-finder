@@ -13,6 +13,7 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
+import { Sessions } from '../../api/sessions/Sessions';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const makeSchema = (allInterests) => new SimpleSchema({
@@ -24,8 +25,8 @@ function getProfileData(email) {
   const data = Profiles.collection.findOne({ email });
   const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
   const sessions = _.pluck(ProfilesSessions.collection.find({ profile: email }).fetch(), 'session');
-  const participation = _.pluck(ProfilesParticipation.collection.find({ profile: email }).fetch(), 'session');
-  // console.log(_.extend({ }, data, { interests, projects: projectPictures }));
+  const sessionParticipation = _.pluck(ProfilesParticipation.collection.find({ profile: email }).fetch(), 'sessionID');
+  const participation = sessionParticipation.map(sessionID => Sessions.collection.findOne({ _id: sessionID }).title);
   return _.extend({}, data, { interests, sessions, participation });
 }
 
