@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Loader, Card, Label, Button, List, Header } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
@@ -67,9 +68,12 @@ const MakeCard = (props) => (
       <Header as='h5'>Participants</Header>
       {_.map(props.session.participants, (p, index) => <List key={index} size='tiny' style={{ color: 'black' }} >{p}</List>)}
     </Card.Content>
-    <Button onClick={handleClick(props.session._id)}>
+    {Meteor.user() ? (
+      <Button onClick={handleClick(props.session._id)}>
       Join Session
-    </Button>
+      </Button>
+    ) : <Button as={NavLink} exact to='/signup' content={'Sign up or log in to join session'}/>
+    }
   </Card>
 
 );
@@ -102,7 +106,6 @@ class SessionsPage extends React.Component {
 
 SessionsPage.propTypes = {
   ready: PropTypes.bool.isRequired,
-  session: PropTypes.object,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
