@@ -4,6 +4,7 @@ import { Container, Loader, Card, Label, Button, List, Header } from 'semantic-u
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
+import swal from 'sweetalert';
 import { Profiles } from '../../api/profiles/Profiles';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { Sessions } from '../../api/sessions/Sessions';
@@ -16,13 +17,27 @@ function getSessionData(_id) {
   const data = Sessions.collection.findOne({ _id });
   const interests = _.pluck(SessionsInterests.collection.find({ sessionID: _id }).fetch(), 'interests');
   const profiles = _.pluck(ProfilesSessions.collection.find({ sessionID: _id }).fetch(), 'profile');
-  const profilesParticipants = _.pluck(ProfilesParticipation.collection.find({ sessionID: _id }).fetch(), 'participants');
+  const sessionsParticipants = _.pluck(ProfilesParticipation.collection.find({ sessionID: _id }).fetch(), 'profile');
   const profileName = profiles.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
-  const participants = profilesParticipants.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
+  const participants = sessionsParticipants.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
   return _.extend({ }, data, { interests, creator: profileName, participants });
 }
+
+const handleClick = value => () => (
+
+  Meteor.call(joinSessionMethod, { email: Meteor.user().username, sessionID: value }, (error) => {
+    if (error) {
+      swal('Error', error.message, 'error');
+    } else {
+      swal({ title: 'Success', text: 'Joined session successfully', icon: 'success' }).then(function () {
+        this.window.location.reload();
+      });
+
+    }
+  })
+);
 
 /** Component for layout out a Project Card. */
 const MakeCard = (props) => (
@@ -52,10 +67,11 @@ const MakeCard = (props) => (
       <Header as='h5'>Participants</Header>
       {_.map(props.session.participants, (p, index) => <List key={index} size='tiny' style={{ color: 'black' }} >{p}</List>)}
     </Card.Content>
-    <Button onClick={this.handleClick}>
+    <Button onClick={handleClick(props.session._id)}>
       Join Session
     </Button>
   </Card>
+
 );
 
 MakeCard.propTypes = {
@@ -64,15 +80,6 @@ MakeCard.propTypes = {
 
 /** Renders the Project Collection as a set of Cards. */
 class SessionsPage extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    console.log('TESTING');
-  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -95,6 +102,7 @@ class SessionsPage extends React.Component {
 
 SessionsPage.propTypes = {
   ready: PropTypes.bool.isRequired,
+  session: PropTypes.object,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */

@@ -11,7 +11,7 @@ class SessionsParticipantsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      sessionID: { type: String, index: true, unique: true },
+      sessionID: { type: String },
       participants: { type: String, optional: true },
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.

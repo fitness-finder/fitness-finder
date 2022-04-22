@@ -50,10 +50,15 @@ const joinSessionMethod = 'Session.join';
 
 Meteor.methods({
   'Session.join'({ email, sessionID }) {
-    ProfilesParticipation.collection.insert({ profile: email, sessionID, session: (Sessions.collection.findOne({ _Id: sessionID }).session) });
-    SessionsParticipants.collection.insert({ sessionID, participants:
-        (`${Profiles.collection.findOne({ email: email }).firstName
-        } ${Profiles.collection.findOne({ email: email }).lastName}`) });
+    if (ProfilesParticipation.collection.findOne({ profile: email, sessionID })) {
+      throw new Meteor.Error('You already joined this session.');
+    } else {
+      ProfilesParticipation.collection.insert({ profile: email, sessionID });
+      SessionsParticipants.collection.insert({ sessionID, participants:
+          (`${Profiles.collection.findOne({ email: email }).firstName
+          } ${Profiles.collection.findOne({ email: email }).lastName}`) });
+
+    }
   },
 });
 
