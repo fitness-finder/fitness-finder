@@ -14,16 +14,16 @@ import { joinSessionMethod } from '../../startup/both/Methods';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /** Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
-function getSessionData(_id) {
-  const data = Sessions.collection.findOne({ _id });
-  const interests = _.pluck(SessionsInterests.collection.find({ sessionID: _id }).fetch(), 'interests');
-  const profiles = _.pluck(ProfilesSessions.collection.find({ sessionID: _id }).fetch(), 'profile');
-  const sessionsParticipants = _.pluck(ProfilesParticipation.collection.find({ sessionID: _id }).fetch(), 'profile');
+function getSessionData(value) {
+  const data = Sessions.collection.findOne({ _id: value });
+  const profiles = _.pluck(ProfilesSessions.collection.find({ sessionID: value }).fetch(), 'profile');
+  const sessionsParticipants = _.pluck(ProfilesParticipation.collection.find({ sessionID: value }).fetch(), 'profile');
   const profileName = profiles.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
   const participants = sessionsParticipants.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
-  return _.extend({ }, data, { interests, creator: profileName, participants });
+  const interests = console.log((SessionsInterests.collection.find({ sessionID: value }).fetch()));
+  return _.extend({ }, data, { interests, creator: profileName, participants, value });
 }
 
 const handleClick = value => () => (
@@ -69,7 +69,7 @@ const MakeCard = (props) => (
       {_.map(props.session.participants, (p, index) => <List key={index} size='tiny' style={{ color: 'black' }} >{p}</List>)}
     </Card.Content>
     {Meteor.user() ? (
-      <Button onClick={handleClick(props.session._id)}>
+      <Button onClick={handleClick(props.session.value)}>
       Join Session
       </Button>
     ) : <Button as={NavLink} exact to='/signup' content={'Sign up or log in to join session'}/>

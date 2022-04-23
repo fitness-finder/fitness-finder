@@ -12,7 +12,7 @@ class ProfilesParticipationCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       profile: String,
-      session: { type: String, optional: true },
+      session: String ,
       sessionID: String,
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.

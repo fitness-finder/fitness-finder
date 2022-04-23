@@ -50,10 +50,13 @@ const joinSessionMethod = 'Session.join';
 
 Meteor.methods({
   'Session.join'({ email, sessionID }) {
-    if (ProfilesParticipation.collection.findOne({ profile: email, sessionID })) {
+    if (ProfilesParticipation.collection.findOne({ profile: email, sessionID }) ||
+      (ProfilesSessions.collection.findOne({ profile: email, sessionID }))) {
       throw new Meteor.Error('You already joined this session.');
     } else {
-      ProfilesParticipation.collection.insert({ profile: email, sessionID });
+      const session = ((Sessions.collection.findOne({ _id: sessionID }).title));
+      ProfilesParticipation.collection.remove({ profile: email, sessionID });
+      ProfilesParticipation.collection.insert({ profile: email, sessionID, session });
       SessionsParticipants.collection.insert({ sessionID, participants:
           (`${Profiles.collection.findOne({ email: email }).firstName
           } ${Profiles.collection.findOne({ email: email }).lastName}`) });
@@ -89,6 +92,7 @@ Meteor.methods({
     const sessionID = Sessions.collection.insert({ title, date, description, skillLevel, location });
     ProfilesSessions.collection.insert({ profile: owner, sessionID, session: title });
     if (interests) {
+      SessionsInterests.collection.remove({ sessionID });
       interests.map(interest => SessionsInterests.collection.insert({ sessionID, interest }));
     } else {
       throw new Meteor.Error('At least one interest is required.');

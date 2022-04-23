@@ -43,7 +43,7 @@ function addSession({ title, date, description, interests, skillLevel, location,
   const sessionID = Sessions.collection.insert({ title, date, description, skillLevel, location });
   console.log(` this value is ${sessionID}`);
   ProfilesSessions.collection.insert({ profile: owner, sessionID, session: title });
-  interests.map(interest => SessionsInterests.collection.insert({ sessionID, interest }));
+  interests.map(interest => SessionsInterests.collection.insert({ sessionID: sessionID, interest: interest }));
   SessionsParticipants.collection.insert({ sessionID, participants:
   (`${Profiles.collection.findOne({ email: owner }).firstName
   } ${Profiles.collection.findOne({ email: owner }).lastName}`) });
