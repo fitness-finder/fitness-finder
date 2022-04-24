@@ -4,7 +4,6 @@ import { signoutPage } from './signout.page';
 import { signupPage } from './signup.page';
 import { profilesPage } from './profiles.page';
 import { sessionsPage } from './sessions.page';
-import { interestsPage } from './interests.page';
 import { yourProfilePage } from './yourProfile.page';
 import { addSessionPage } from './addsession.page';
 import { navBar } from './navbar.component';
@@ -45,12 +44,6 @@ test('Test that profiles page displays', async (testController) => {
   await profilesPage.hasDefaultProfiles(testController);
 });
 
-test('Test that interests page displays', async (testController) => {
-  await navBar.gotoInterestsPage(testController);
-  await interestsPage.isDisplayed(testController);
-  await interestsPage.hasDefaultInterests(testController);
-});
-
 test('Test that sessions page displays', async (testController) => {
   await navBar.gotoSessionsPage(testController);
   await sessionsPage.isDisplayed(testController);
@@ -73,14 +66,4 @@ test('Test that addSession page works', async (testController) => {
   await navBar.gotoAddSessionPage(testController);
   await addSessionPage.isDisplayed(testController);
   await addSessionPage.addSession(testController);
-});
-
-test('Test that interests page works', async (testController) => {
-  await navBar.ensureLogout(testController);
-  await navBar.gotoSigninPage(testController);
-  await signinPage.signin(testController, credentials.username, credentials.password);
-  await navBar.gotoInterestsPage(testController);
-  await interestsPage.isDisplayed(testController);
-  await interestsPage.filter(testController);
-  // change if going to use interests page
 });
