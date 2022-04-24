@@ -40,7 +40,7 @@ class NavBar extends React.Component {
           [<Menu.Item
             as={NavLink}
             style={textStyle}
-            id="addProjectMenuItem"
+            id="addSessionMenuItem"
             activeClassName="active"
             exact
             to="/addSession"
@@ -50,7 +50,7 @@ class NavBar extends React.Component {
         <Menu.Item
           as={NavLink}
           style={textStyle}
-          id="projectsMenuItem"
+          id="sessionsMenuItem"
           activeClassName="active"
           exact
           to="/sessions"

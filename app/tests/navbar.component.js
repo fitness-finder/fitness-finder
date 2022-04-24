@@ -25,16 +25,12 @@ class NavBar {
     await testController.click('#interestsMenuItem');
   }
 
-  async gotoProjectsPage(testController) {
-    await testController.click('#projectsMenuItem');
+  async gotoSessionsPage(testController) {
+    await testController.click('#sessionsMenuItem');
   }
 
-  async gotoAddProjectPage(testController) {
-    await testController.click('#addProjectMenuItem');
-  }
-
-  async gotoFilterPage(testController) {
-    await testController.click('#filterMenuItem');
+  async gotoAddSessionPage(testController) {
+    await testController.click('#addSessionMenuItem');
   }
 
   /** Check that the specified user is currently logged in. */

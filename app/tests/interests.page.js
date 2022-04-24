@@ -14,7 +14,7 @@ class InterestsPage {
   /** Checks that the current page has at least nine interests on it.  */
   async hasDefaultInterests(testController) {
     const cardCount = Selector('.ui .card').count;
-    await testController.expect(cardCount).gte(9);
+    await testController.expect(cardCount).gte(3);
   }
 }
 
