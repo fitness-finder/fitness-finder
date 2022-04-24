@@ -39,7 +39,7 @@ Meteor.publish(Sessions.userPublicationName, () => Sessions.collection.find());
 Meteor.publish(ProfilesSessions.userPublicationName, () => ProfilesSessions.collection.find());
 
 /** Define a publication to publish this collection. */
-Meteor.publish(SessionsInterests.userPublicationName, () => ProfilesInterests.collection.find());
+Meteor.publish(SessionsInterests.userPublicationName, () => SessionsInterests.collection.find());
 
 /** Define a publication to publish this collection. */
 Meteor.publish(SessionsParticipants.userPublicationName, () => SessionsParticipants.collection.find());

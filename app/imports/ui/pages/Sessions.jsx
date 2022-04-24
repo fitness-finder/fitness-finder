@@ -22,7 +22,8 @@ function getSessionData(value) {
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
   const participants = sessionsParticipants.map(profile => (`${Profiles.collection.findOne({ email: profile }).firstName
   } ${Profiles.collection.findOne({ email: profile }).lastName}`));
-  const interests = console.log((SessionsInterests.collection.find({ sessionID: value }).fetch()));
+  const interests = _.pluck(SessionsInterests.collection.find({ sessionID: value }).fetch(), 'interest');
+  console.log(value);
   return _.extend({ }, data, { interests, creator: profileName, participants, value });
 }
 
