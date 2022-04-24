@@ -91,8 +91,8 @@ class ProfilesPage extends React.Component {
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
 
-      <div id="parent">
-        <Container id="filter-profiles" style={{ paddingBottom: '35px' }}>
+      <div id="profiles-page">
+        <Container id="filtered-profiles" style={{ paddingBottom: '35px' }}>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
             <Segment>
               <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
@@ -110,7 +110,7 @@ class ProfilesPage extends React.Component {
         </Container>
         <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
           <Header as="h1" textAlign='center' inverted>All Profiles</Header>
-          <Container id="profiles-page">
+          <Container id="all-profiles">
             <Card.Group style={{ paddingTop: '10px' }}>
               {_.map(profileDataAll, (profile, index) => {
                 if (profile.firstName) {
