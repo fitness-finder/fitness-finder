@@ -64,7 +64,7 @@ class AddSession extends React.Component {
               <LongTextField id='description' name='description' placeholder='Describe the session here'/>
               <Form.Group widths={'equal'}>
                 <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
-                <RadioField name='skillLevel' inline='true' showInlineError={true} placeholder={'Skill Level'}/>
+                <RadioField id='skillLevel' name='skillLevel' inline='true' showInlineError={true} placeholder={'Skill Level'}/>
               </Form.Group>
               <SubmitField id='submit' value='Submit'/>
               <ErrorsField/>

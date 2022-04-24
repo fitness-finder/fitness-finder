@@ -1,5 +1,4 @@
 import { Selector } from 'testcafe';
-import { yourProfilePage } from './yourProfile.page';
 
 class AddSessionPage {
   constructor() {
@@ -37,8 +36,8 @@ class AddSessionPage {
     await testController.click(interestsSelector);
 
     // Select skill level
-    const skillLevelSelector = Selector('Beginner');
-    // const BeginnerOption = skillLevelSelector.find('#Beginner');
+    const skillLevelSelector = Selector('#skillLevel');
+    const BeginnerOption = skillLevelSelector.find('#Beginner');
     await testController.click(skillLevelSelector);
     await testController.click(BeginnerOption);
 
