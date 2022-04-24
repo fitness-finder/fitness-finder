@@ -91,7 +91,7 @@ class ProfilesPage extends React.Component {
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
 
-      <div id="profiles-page">
+      <div>
         <Container style={{ paddingBottom: '35px' }}>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
             <Segment>
@@ -110,7 +110,7 @@ class ProfilesPage extends React.Component {
         </Container>
         <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
           <Header as="h1" textAlign='center' inverted>All Profiles</Header>
-          <Container>
+          <Container id="profiles-page">
             <Card.Group style={{ paddingTop: '10px' }}>
               {_.map(profileDataAll, (profile, index) => {
                 if (profile.firstName) {
