@@ -12,7 +12,6 @@ import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
 import { Projects } from '../../api/projects/Projects';
 import { updateProfileMethod } from '../../startup/both/Methods';
 import RadioField from '../forms/controllers/RadioField';
@@ -54,14 +53,12 @@ class YourProfile extends React.Component {
     const email = Meteor.user().username;
     // Create the form schema for uniforms. Need to determine all interests and projects for multiselect list.
     const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
-    const allProjects = _.pluck(Projects.collection.find().fetch(), 'name');
-    const formSchema = makeSchema(allInterests, allProjects);
+    const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
     // Now create the model with all the user information.
-    const projects = _.pluck(ProfilesProjects.collection.find({ profile: email }).fetch(), 'project');
     const interests = _.pluck(ProfilesInterests.collection.find({ profile: email }).fetch(), 'interest');
     const profile = Profiles.collection.findOne({ email });
-    const model = _.extend({}, profile, { interests, projects });
+    const model = _.extend({}, profile, { interests });
     return (
       <Grid id="your-profile-page" container centered>
         <Grid.Column>
@@ -101,9 +98,8 @@ export default withTracker(() => {
   const sub1 = Meteor.subscribe(Interests.userPublicationName);
   const sub2 = Meteor.subscribe(Profiles.userPublicationName);
   const sub3 = Meteor.subscribe(ProfilesInterests.userPublicationName);
-  const sub4 = Meteor.subscribe(ProfilesProjects.userPublicationName);
   const sub5 = Meteor.subscribe(Projects.userPublicationName);
   return {
-    ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
+    ready: sub1.ready() && sub2.ready() && sub3.ready() && sub5.ready(),
   };
 })(YourProfile);
