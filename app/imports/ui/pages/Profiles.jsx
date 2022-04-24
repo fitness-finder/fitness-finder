@@ -92,7 +92,7 @@ class ProfilesPage extends React.Component {
     return (
 
       <div id="profiles-page">
-        <Container id="filtered-profiles" style={{ paddingBottom: '35px' }}>
+        <Container style={{ paddingBottom: '35px' }}>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
             <Segment>
               <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
@@ -110,7 +110,7 @@ class ProfilesPage extends React.Component {
         </Container>
         <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
           <Header as="h1" textAlign='center' inverted>All Profiles</Header>
-          <Container id="all-profiles">
+          <Container>
             <Card.Group style={{ paddingTop: '10px' }}>
               {_.map(profileDataAll, (profile, index) => {
                 if (profile.firstName) {
