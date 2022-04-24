@@ -15,17 +15,16 @@ class AddSessionPage {
   /** Checks this page is displayed, then adds a new session */
   async addSession(testController) {
     const title = `radgrad-${new Date().getTime()}`;
-    const owner = 'https://www.radgrad.org/img/radgrad_logo.png';
-    const location = 'https://radgrad.org';
+    const owner = 'test@hawaii.edu';
+    const location = 'outside';
     const date = 'date';
     const description = 'Growing awesome computer scientists, one graduate at a time.';
     await this.isDisplayed(testController);
-    // Define the new project
+    // Define the new session
     await testController.typeText('#title', title);
     await testController.typeText('#owner', owner);
     await testController.typeText('#location', location);
     await testController.typeText('#date', date);
-    await testController.typeText('#yourProfilepage', yourProfilePage);
     await testController.typeText('#description', description);
 
     // Select two interests.
@@ -36,6 +35,12 @@ class AddSessionPage {
     await testController.click(RunningOption);
     await testController.click(HikingOption);
     await testController.click(interestsSelector);
+
+    // Select skill level
+    const skillLevelSelector = Selector('Beginner');
+    // const BeginnerOption = skillLevelSelector.find('#Beginner');
+    await testController.click(skillLevelSelector);
+    await testController.click(BeginnerOption);
 
     await testController.click('#submit');
     await testController.click(Selector('.swal-button--confirm'));
