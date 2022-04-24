@@ -36,8 +36,7 @@ class AddSessionPage {
     await testController.click(interestsSelector);
 
     // Select skill level
-    const skillLevelSelector = Selector('#Beginner');
-    await testController.click(skillLevelSelector);
+    await testController.click('#Beginner');
 
     await testController.click('#submit');
     await testController.click(Selector('.swal-button--confirm'));
