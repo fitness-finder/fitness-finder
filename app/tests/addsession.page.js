@@ -35,9 +35,6 @@ class AddSessionPage {
     await testController.click(HikingOption);
     await testController.click(interestsSelector);
 
-    // Select skill level
-    await testController.click('#Beginner');
-
     await testController.click('#submit');
     await testController.click(Selector('.swal-button--confirm'));
   }
