@@ -17,7 +17,7 @@ class AddSessionPage {
     const title = `radgrad-${new Date().getTime()}`;
     const owner = 'https://www.radgrad.org/img/radgrad_logo.png';
     const location = 'https://radgrad.org';
-    const date = '';
+    const date = 'date';
     const description = 'Growing awesome computer scientists, one graduate at a time.';
     await this.isDisplayed(testController);
     // Define the new project
