@@ -91,7 +91,7 @@ class ProfilesPage extends React.Component {
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
 
-      <div>
+      <div id="profiles-page">
         <Container style={{ paddingBottom: '35px' }}>
           <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
             <Segment>
