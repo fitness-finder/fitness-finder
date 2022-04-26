@@ -87,7 +87,9 @@ class SessionsPage extends React.Component {
     const formSchema = makeSchema(allSessions);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const sessions = _.pluck(ProfilesSessions.collection.find({ session: { $in: this.state.sessions } }).fetch(), 'profile');
-    const sessionData = sessions.map(sessionID => getSessionData(sessionID));
+    const allsessions = _.pluck(Sessions.collection.find().fetch(), 'title');
+    const sessionData = _.uniq(sessions).map(sessionID => getSessionData(sessionID));
+    const allSessionData = allsessions.map(sessionID => getSessionData(sessionID));
     return (
       <div id="parent">
         <Container id="filter-page" style={{ paddingBottom: '35px' }}>
@@ -103,7 +105,7 @@ class SessionsPage extends React.Component {
         </Container>
         <Container id="sessions-page">
           <Card.Group>
-            {_.map(sessionData, (session, index) => <MakeCard key={index} session={session}/>)}
+            {_.map(allSessionData, (session, index) => <MakeCard key={index} session={session}/>)}
           </Card.Group>
         </Container>
       </div>
