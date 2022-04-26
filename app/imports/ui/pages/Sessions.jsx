@@ -1,13 +1,23 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Loader, Card, Label, Button, List, Header } from 'semantic-ui-react';
+import { Container, Loader, Card, Label, Button, List, Header, Segment } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import SimpleSchema from 'simpl-schema';
 import { Profiles } from '../../api/profiles/Profiles';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { Sessions } from '../../api/sessions/Sessions';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
+import MultiSelectField from '../forms/controllers/MultiSelectField';
+
+/** Create a schema to specify the structure of the data to appear in the form. */
+const makeSchema = (allSessions) => new SimpleSchema({
+  sessions: { type: Array, label: 'Sessions', optional: true },
+  'sessions.$': { type: String, allowedValues: allSessions },
+});
 
 /** Gets the Project data as well as Profiles and Interests associated with the passed Project name. */
 function getSessionData(_id) {
@@ -57,6 +67,15 @@ MakeCard.propTypes = {
 /** Renders the Project Collection as a set of Cards. */
 class SessionsPage extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { sessions: [] };
+  }
+
+  submit(data) {
+    this.setState({ sessions: data.sessions || [] });
+  }
+
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -64,14 +83,30 @@ class SessionsPage extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const sessions = _.pluck(Sessions.collection.find().fetch(), '_id');
+    const allSessions = _.pluck(Sessions.collection.find().fetch(), '_id');
+    const formSchema = makeSchema(allSessions);
+    const bridge = new SimpleSchema2Bridge(formSchema);
+    const sessions = _.pluck(ProfilesSessions.collection.find({ session: { $in: this.state.sessions } }).fetch(), 'profile');
     const sessionData = sessions.map(sessionID => getSessionData(sessionID));
     return (
-      <Container id="sessions-page">
-        <Card.Group>
-          {_.map(sessionData, (session, index) => <MakeCard key={index} session={session}/>)}
-        </Card.Group>
-      </Container>
+      <div id="parent">
+        <Container id="filter-page" style={{ paddingBottom: '35px' }}>
+          <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
+            <Segment>
+              <MultiSelectField id='sessions' name='sessions' showInlineError={true} placeholder={'Sessions'}/>
+              <SubmitField id='submit' value='Submit'/>
+            </Segment>
+          </AutoForm>
+          <Card.Group style={{ paddingTop: '10px' }}>
+            {_.map(sessionData, (session, index) => <MakeCard key={index} profile={session}/>)}
+          </Card.Group>
+        </Container>
+        <Container id="sessions-page">
+          <Card.Group>
+            {_.map(sessionData, (session, index) => <MakeCard key={index} session={session}/>)}
+          </Card.Group>
+        </Container>
+      </div>
     );
   }
 }
