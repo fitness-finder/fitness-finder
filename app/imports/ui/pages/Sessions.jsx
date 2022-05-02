@@ -4,9 +4,9 @@ import { Container, Loader, Card, Label, Button, List, Header, Segment } from 's
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-import { AutoForm, SubmitField } from 'uniforms-semantic';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { Profiles } from '../../api/profiles/Profiles';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { Sessions } from '../../api/sessions/Sessions';
@@ -86,10 +86,8 @@ class SessionsPage extends React.Component {
     const allSessions = _.pluck(Sessions.collection.find().fetch(), '_id');
     const formSchema = makeSchema(allSessions);
     const bridge = new SimpleSchema2Bridge(formSchema);
-    const sessions = _.pluck(ProfilesSessions.collection.find({ session: { $in: this.state.sessions } }).fetch(), 'profile');
-    const allsessions = _.pluck(Sessions.collection.find().fetch(), 'title');
-    const sessionData = _.uniq(sessions).map(sessionID => getSessionData(sessionID));
-    const allSessionData = allsessions.map(sessionID => getSessionData(sessionID));
+    const emails = _.pluck(ProfilesSessions.collection.find({ sessionID: { $in: this.state.sessions } }).fetch(), 'sessionID');
+    const sessionData = emails.map(sessionID => getSessionData(sessionID));
     return (
       <div id="parent">
         <Container id="filter-page" style={{ paddingBottom: '35px' }}>
@@ -100,12 +98,12 @@ class SessionsPage extends React.Component {
             </Segment>
           </AutoForm>
           <Card.Group style={{ paddingTop: '10px' }}>
-            {_.map(sessionData, (session, index) => <MakeCard key={index} profile={session}/>)}
+            {_.map(sessionData, (session, index) => <MakeCard key={index} session={session}/>)}
           </Card.Group>
         </Container>
         <Container id="sessions-page">
           <Card.Group>
-            {_.map(allSessionData, (session, index) => <MakeCard key={index} session={session}/>)}
+            {_.map(sessionData, (session, index) => <MakeCard key={index} session={session}/>)}
           </Card.Group>
         </Container>
       </div>
