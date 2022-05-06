@@ -15,6 +15,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import YourSessions from '../pages/YourSessions';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <ProtectedRoute path="/yourprofile" component={YourProfile}/>
+              <ProtectedRoute path="/yourSessions" component={YourSessions}/>
               <Route path="/profiles" component={Profiles}/>
               <Route path="/sessions" component={Sessions}/>
               <ProtectedRoute path="/addSession" component={AddSession}/>

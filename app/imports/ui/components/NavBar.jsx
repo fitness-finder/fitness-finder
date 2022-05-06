@@ -27,6 +27,17 @@ class NavBar extends React.Component {
             to="/yourProfile"
             key='yourProfile'>Your Profile</Menu.Item>
         ) : ''}
+        {this.props.currentUser ? (
+          [<Menu.Item
+            as={NavLink}
+            style={textStyle}
+            id="yourSessionMenuItem"
+            activeClassName="active"
+            exact
+            to="/yourSessions"
+            key='yourSessions'>Your Sessions
+          </Menu.Item>]
+        ) : ''}
         <Menu.Item
           as={NavLink}
           style={textStyle}

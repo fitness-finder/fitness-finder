@@ -4,7 +4,6 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { Sessions } from '../../api/sessions/Sessions';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
-import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /**
@@ -57,11 +56,17 @@ Meteor.methods({
       const session = ((Sessions.collection.findOne({ _id: sessionID }).title));
       ProfilesParticipation.collection.remove({ profile: email, sessionID });
       ProfilesParticipation.collection.insert({ profile: email, sessionID, session });
-      SessionsParticipants.collection.insert({ sessionID, participants:
-          (`${Profiles.collection.findOne({ email: email }).firstName
-          } ${Profiles.collection.findOne({ email: email }).lastName}`) });
 
     }
+  },
+});
+
+const unJoinSessionMethod = 'Session.unJoin';
+
+Meteor.methods({
+  'Session.unJoin'({ email, sessionID }) {
+    ProfilesParticipation.collection.remove({ profile: email, sessionID });
+
   },
 });
 
@@ -77,10 +82,18 @@ Meteor.methods({
     } else {
       throw new Meteor.Error('At least one interest is required.');
     }
-    SessionsParticipants.collection.insert({ sessionID, participants:
-        (`${Profiles.collection.findOne({ email: owner }).firstName
-        } ${Profiles.collection.findOne({ email: owner }).lastName}`) });
   },
 });
 
-export { updateProfileMethod, addSessionMethod, joinSessionMethod };
+const deleteSessionMethod = 'Sessions.delete';
+
+Meteor.methods({
+  'Sessions.delete'({ sessionID }) {
+    ProfilesParticipation.collection.remove({ sessionID });
+    ProfilesSessions.collection.remove({ sessionID });
+    Sessions.collection.remove({ _id: sessionID });
+    SessionsInterests.collection.remove({ sessionID });
+  },
+});
+
+export { updateProfileMethod, addSessionMethod, joinSessionMethod, deleteSessionMethod, unJoinSessionMethod };

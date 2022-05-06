@@ -5,7 +5,6 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
-import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { Sessions } from '../../api/sessions/Sessions';
 
@@ -41,13 +40,9 @@ function addProfile({ firstName, lastName, bio, year, interests, picture, email,
 function addSession({ title, date, description, interests, skillLevel, location, owner }) {
   console.log(`Defining session ${title}`);
   const sessionID = Sessions.collection.insert({ title, date, description, skillLevel, location });
-  console.log(` this value is ${sessionID}`);
+  console.log(` _id value is ${sessionID}`);
   ProfilesSessions.collection.insert({ profile: owner, sessionID, session: title });
   interests.map(interest => SessionsInterests.collection.insert({ sessionID: sessionID, interest: interest }));
-  SessionsParticipants.collection.insert({ sessionID, participants:
-  (`${Profiles.collection.findOne({ email: owner }).firstName
-  } ${Profiles.collection.findOne({ email: owner }).lastName}`) });
-  // Make sure interests are defined in the Interests collection if they weren't already.
   interests.map(interest => addInterest(interest));
 }
 

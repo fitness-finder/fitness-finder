@@ -6,7 +6,6 @@ import { Sessions } from '../../api/sessions/Sessions';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
-import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
 
 /** Define a publication to publish all interests. */
 Meteor.publish(Interests.userPublicationName, () => Interests.collection.find());
@@ -25,9 +24,6 @@ Meteor.publish(ProfilesSessions.userPublicationName, () => ProfilesSessions.coll
 
 /** Define a publication to publish this collection. */
 Meteor.publish(SessionsInterests.userPublicationName, () => SessionsInterests.collection.find());
-
-/** Define a publication to publish this collection. */
-Meteor.publish(SessionsParticipants.userPublicationName, () => SessionsParticipants.collection.find());
 
 /** Define a publication to publish this collection. */
 Meteor.publish(ProfilesParticipation.userPublicationName, () => ProfilesParticipation.collection.find());
