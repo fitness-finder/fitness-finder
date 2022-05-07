@@ -3,6 +3,7 @@ import { signinPage } from './signin.page';
 import { signoutPage } from './signout.page';
 import { signupPage } from './signup.page';
 import { profilesPage } from './profiles.page';
+import { yourSessionsPage } from './yourSessions.page';
 import { sessionsPage } from './sessions.page';
 import { yourProfilePage } from './yourProfile.page';
 import { addSessionPage } from './addsession.page';
@@ -13,8 +14,11 @@ import { navBar } from './navbar.component';
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'grayson@hawaii.edu', password: 'foo', firstName: 'Grayson', lastName: 'Levy' };
 
+/** fixture('Fitness Finder test')
+  .page('https://fitness-finder.xyz'); */
+
 fixture('Fitness Finder test')
-  .page('https://fitness-finder.xyz');
+  .page('http://localhost:3000/');
 
 test('Test that landing page shows up', async (testController) => {
   await landingPage.isDisplayed(testController);
@@ -66,4 +70,13 @@ test('Test that addSession page works', async (testController) => {
   await navBar.gotoAddSessionPage(testController);
   await addSessionPage.isDisplayed(testController);
   await addSessionPage.addSession(testController);
+});
+
+test('Test that Your Sessions page displays and functions', async (testController) => {
+  await navBar.ensureLogout(testController);
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.gotoYourSessionsPage(testController);
+  await yourSessionsPage.isDisplayed(testController);
+  await yourSessionsPage.hasDefaultSessions(testController);
 });

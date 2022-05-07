@@ -80,10 +80,10 @@ const MakeCard = (props) => (
       {_.map(props.session.participants, (p, index) => <List key={index} size='small' style={{ color: 'black' }} >{p}</List>)}
     </Card.Content>
     {(Meteor.user().username === props.session.profiles) ? (
-      <Button onClick={handleClick(props.session.value)}>
+      <Button id='delete' onClick={handleClick(props.session.value)}>
         Delete Session
       </Button>
-    ) : <Button onClick={handleClick2(props.session.value)}>
+    ) : <Button id='unJoin' onClick={handleClick2(props.session.value)}>
       Un-join Session
     </Button>
     }
@@ -96,7 +96,7 @@ MakeCard.propTypes = {
 };
 
 /** Renders the Project Collection as a set of Cards. */
-class SessionsPage extends React.Component {
+class YourSessionsPage extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -124,7 +124,7 @@ class SessionsPage extends React.Component {
   }
 }
 
-SessionsPage.propTypes = {
+YourSessionsPage.propTypes = {
   ready: PropTypes.bool.isRequired,
 };
 
@@ -139,4 +139,4 @@ export default withTracker(() => {
   return {
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
   };
-})(SessionsPage);
+})(YourSessionsPage);

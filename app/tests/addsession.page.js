@@ -13,15 +13,15 @@ class AddSessionPage {
 
   /** Checks this page is displayed, then adds a new session */
   async addSession(testController) {
-    const title = `radgrad-${new Date().getTime()}`;
-    const owner = 'test@hawaii.edu';
+    const title = 'Long Walk';
+    // const owner = 'test@hawaii.edu';
     const location = 'outside';
-    const date = 'date';
-    const description = 'Growing awesome computer scientists, one graduate at a time.';
+    const date = '2021-1-1';
+    const description = 'Lets go for a long walk in the park';
     await this.isDisplayed(testController);
     // Define the new session
     await testController.typeText('#title', title);
-    await testController.typeText('#owner', owner);
+    // await testController.typeText('#owner', owner);
     await testController.typeText('#location', location);
     await testController.typeText('#date', date);
     await testController.typeText('#description', description);

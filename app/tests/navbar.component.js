@@ -25,6 +25,10 @@ class NavBar {
     await testController.click('#yourProfileMenuItem');
   }
 
+  async gotoYourSessionsPage(testController) {
+    await testController.click('#yourSessionsMenuItem');
+  }
+
   async gotoSessionsPage(testController) {
     await testController.click('#sessionsMenuItem');
   }
