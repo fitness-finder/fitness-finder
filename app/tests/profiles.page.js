@@ -14,7 +14,7 @@ class ProfilesPage {
   /** Checks that the current page has at least two profiles on it.  */
   async hasDefaultProfiles(testController) {
     const cardCount = Selector('.ui .card').count;
-    await testController.expect(cardCount).gte(2);
+    await testController.expect(cardCount).gte(33);
   }
 }
 

@@ -31,7 +31,7 @@ class NavBar extends React.Component {
           [<Menu.Item
             as={NavLink}
             style={textStyle}
-            id="yourSessionMenuItem"
+            id="yourSessionsMenuItem"
             activeClassName="active"
             exact
             to="/yourSessions"
