@@ -493,13 +493,13 @@
       "interests": [
         "Hiking"
       ],
-      "skillLevel": "advanced",
+      "skillLevel": "Advanced",
       "location": "Pali Hwy Lookout",
       "owner": "johnson@hawaii.edu"
     },
 
     {
-      "title": "Weightlifting",
+      "title": "Weight lifting",
       "date": "Wednesday 4/27 12am",
       "description": "Upper body workout",
       "interests": [
@@ -555,7 +555,7 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Koko Head trail",
-      "owner": "kyldej@hawaii.edu"
+      "owner": "klydej@hawaii.edu"
     },
 
     {
@@ -627,7 +627,7 @@
       ],
       "skillLevel": "Beginner",
       "location": "Ala Moana Park",
-      "owner": "John@hawaii.edu"
+      "owner": "jjackson@hawaii.edu"
     },
 
     {
@@ -675,7 +675,7 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Moanalua Swimming Pool",
-      "owner": "mattaus@hawaii.edu"
+      "owner": "mattausl@hawaii.edu"
     },
 
     {
@@ -748,7 +748,7 @@
       ],
       "skillLevel": "Advanced",
       "location": "Olomana Trail",
-      "owner": "John@hawaii.edu"
+      "owner": "mgoldbe@hawaii.edu"
     },
 
     {
