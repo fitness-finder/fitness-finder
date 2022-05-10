@@ -1,24 +1,14 @@
 import React from 'react';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema from 'simpl-schema';
-import { Container, Loader, Card, Image, Label, Header, Segment } from 'semantic-ui-react';
+import { Container, Loader, Card, Image, Label, Header } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
-import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
-
-/** Create a schema to specify the structure of the data to appear in the form. */
-const makeSchema = (allInterests) => new SimpleSchema({
-  interests: { type: Array, label: 'Interests', optional: true },
-  'interests.$': { type: String, allowedValues: allInterests },
-});
 
 function getProfileData(email) {
   const data = Profiles.collection.findOne({ email });
@@ -82,50 +72,16 @@ class ProfilesPage extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const allInterests = _.pluck(Interests.collection.find().fetch(), 'name');
-    const formSchema = makeSchema(allInterests);
-    const bridge = new SimpleSchema2Bridge(formSchema);
-    const emails = _.pluck(ProfilesInterests.collection.find({ interest: { $in: this.state.interests } }).fetch(), 'profile');
     const emailsall = _.pluck(Profiles.collection.find().fetch(), 'email');
     const profileDataAll = emailsall.map(email => getProfileData(email));
-    const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
-      <div id="parent">
-        <Container id="filter-page" style={{ paddingBottom: '35px' }}>
-      <div id="profiles-page">
-        <Container style={{ paddingBottom: '35px' }}>
-          <AutoForm schema={bridge} onSubmit={data => this.submit(data)} >
-            <Segment>
-              <MultiSelectField id='interests' name='interests' showInlineError={true} placeholder={'Interests'}/>
-              <SubmitField id='submit' value='Submit'/>
-            </Segment>
-          </AutoForm>
+      <div>
+        <Header as="h1" textAlign='center' >All Profiles</Header>
+        <Container id="profile-list">
           <Card.Group style={{ paddingTop: '10px' }}>
-            {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
-            {_.map(profileData, (profile, index) => {
-              if (profile.firstName) {
-                return <MakeCard key={index} profile={profile}/>;
-              }
-              return null;
-            })}
+            {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
           </Card.Group>
         </Container>
-        <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
-          <Header as="h1" textAlign='center' inverted>All Profiles</Header>
-          <Container id="profile-list">
-            <Card.Group style={{ paddingTop: '10px' }}>
-              {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
-          <Container id="profiles-page">
-            <Card.Group style={{ paddingTop: '10px' }}>
-              {_.map(profileDataAll, (profile, index) => {
-                if (profile.firstName) {
-                  return <MakeCard key={index} profile={profile}/>;
-                }
-                return null;
-              })}
-            </Card.Group>
-          </Container>
-        </div>
       </div>
     );
   }
