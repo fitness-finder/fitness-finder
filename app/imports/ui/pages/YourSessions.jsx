@@ -106,7 +106,7 @@ class YourSessionsPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const sessions = _.pluck(ProfilesSessions.collection.find({ profile: Meteor.user().username }).fetch(), 'sessionID');
-    const sessions1 = _.pluck(ProfilesParticipation.collection.find().fetch(), 'sessionID');
+    const sessions1 = _.pluck(ProfilesParticipation.collection.find({ profile: Meteor.user().username }).fetch(), 'sessionID');
     const sessionData = sessions.map(sessionID => getSessionData(sessionID));
     const sessionData1 = sessions1.map(sessionID => getSessionData(sessionID));
     return (
