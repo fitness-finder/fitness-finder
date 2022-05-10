@@ -11,14 +11,15 @@ class YourSessionsPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  /** Checks that the current page has at least nine interests on it.  */
   async hasDefaultSessions(testController) {
     const cardCount = Selector('.ui .card').count;
     await testController.expect(cardCount).gte(2);
   }
 
   async deleteSession(testController) {
-
+    await testController.click('#delete');
+    const cardCount = Selector('.ui .card').count;
+    await testController.expect(cardCount).gte(1);
   }
 }
 

@@ -79,4 +79,5 @@ test('Test that Your Sessions page displays and functions', async (testControlle
   await navBar.gotoYourSessionsPage(testController);
   await yourSessionsPage.isDisplayed(testController);
   await yourSessionsPage.hasDefaultSessions(testController);
+  await yourSessionsPage.deleteSession(testController);
 });
