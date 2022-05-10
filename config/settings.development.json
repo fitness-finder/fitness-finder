@@ -473,8 +473,438 @@
 
   ],
 
-  "loadAssetsFile":  false,
+  "defaultSessions": [
+    {
+      "title": "Evening Run",
+      "date": "Monday 4/25 6pm",
+      "description": "Evening run through waikiki",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "zoo parking lot",
+      "owner": "grayson@hawaii.edu"
+    },
 
+    {
+      "title": "Sunrise Hike",
+      "date": "Tuesday 4/26 5am",
+      "description": "Sunrise hike at the Pali notches",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "advanced",
+      "location": "Pali Hwy Lookout",
+      "owner": "johnson@hawaii.edu"
+    },
+
+    {
+      "title": "Weightlifting",
+      "date": "Wednesday 4/27 12am",
+      "description": "Upper body workout",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Anytime Fitness Honolulu",
+      "owner": "tannerky@hawaii.edu"
+    },
+
+    {
+      "title": "Core workout",
+      "date": "Wednesday 4/27 10am",
+      "description": "Exercises to strengthen and work on abs",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Pali Hwy Lookout",
+      "owner": "liamat@hawaii.edu"
+    },
+
+    {
+      "title": "Strength Training",
+      "date": "Thursday 4/28 8am",
+      "description": "Workout major muscle groups for full body strength and coordination",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Powerhouse Gym Aiea",
+      "owner": "jnwhite@hawaii.edu"
+    },
+
+    {
+      "title": "Swimming laps",
+      "date": "Thursday 4/28 2pm",
+      "description": "Swimming laps around the pool, and practice different swimming strokes",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Moanalua Community pool",
+      "owner": "Jamespet@hawaii.edu"
+    },
+
+    {
+      "title": "Koko Head",
+      "date": "Thursday 4/28 10am",
+      "description": "Koko head hiking trail one time up and down",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Koko head trail",
+      "owner": "kyldej@hawaii.edu"
+    },
+
+    {
+      "title": "Diamond Head",
+      "date": "Friday 4/29 10am",
+      "description": "Diamond Head hiking trail one time up and down",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Diamond head trail",
+      "owner": "darquine@hawaii.edu"
+    },
+
+    {
+      "title": "1 mile run",
+      "date": "Thursday 4/28 12pm",
+      "description": "Morning 1 mile run while trying to improve my time",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Kakaako Park",
+      "owner": "maria1@hawaii.edu"
+    },
+
+    {
+      "title": "Yoga",
+      "date": "Friday 4/29 10am",
+      "description": "A combination of stretches, breath work, and meditation to release tension and stiffness",
+      "interests": [
+        "Yoga"
+      ],
+      "skillLevel": "Beginner",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "Ashdg@hawaii.edu"
+    },
+
+    {
+      "title": "Morning Surfing",
+      "date": "Saturday 4/30 10am",
+      "description": "Have some fun and come surfing with me.",
+      "interests": [
+        "Surfing"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Waimea Bay",
+      "owner": "kjeffer@hawaii.edu"
+    },
+
+    {
+      "title": "Manoa Falls",
+      "date": "Saturday 4/30 8am",
+      "description": "Hike the manoa falls trail in the morning",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Manoa Falls Trail",
+      "owner": "maria1@hawaii.edu"
+    },
+
+    {
+      "title": "Afternoon Run",
+      "date": "Saturday 4/30 12pm",
+      "description": "Afternoon as a warmup before I start my weight lifting workout",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Ala Moana Park",
+      "owner": "John@hawaii.edu"
+    },
+
+    {
+      "title": "Beginner swimming lessons",
+      "date": "Saturday 4/30 2pm",
+      "description": "Going to a class to learn how to swim.",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Kalihi Valley District Swimming Pool",
+      "owner": "rodwhit@hawaii.edu"
+    },
+
+    {
+      "title": "Workout for lower body",
+      "date": "Sunday 5/1 9am",
+      "description": "Workout lower body. Includes weightlifting and machine workouts",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "24 Hour Fitness Kapolei",
+      "owner": "ashle1@hawaii.edu"
+    },
+
+    {
+      "title": "Full body weight lifting session",
+      "date": "Sunday 5/1 8am",
+      "description": "Doing things like pull ups, push ups, bench press etc. with and without weights",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Orangetheory Fitness",
+      "owner": "geobow@hawaii.edu"
+    },
+
+    {
+      "title": "Swimming training",
+      "date": "Sunday 5/1 12pm",
+      "description": "Training to get faster at swimming.",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Moanalua Swimming Pool",
+      "owner": "mattaus@hawaii.edu"
+    },
+
+    {
+      "title": "Weight lifting coach",
+      "date": "Monday 5/2 2pm",
+      "description": "New to weight lifting? Join me and I can show you the fundamentals for effective weight lifting",
+      "interests": [
+        "Weight lifting"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Powerhouse Gym",
+      "owner": "jbrooks@hawaii.edu"
+    },
+
+    {
+      "title": "Makapu'u Point Lighthouse",
+      "date": "Monday 5/2 10am",
+      "description": "Join me on this hike and enjoy the beautiful views.",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Makapu'u Point Lighthouse Trail",
+      "owner": "jjackson@hawaii.edu"
+    },
+
+    {
+      "title": "Morning Run",
+      "date": "Tuesday 5/3 12am",
+      "description": "Doing a morning run before I start working out.",
+      "interests": [
+        "Running",
+        "Weight Lifting"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Kakaako Park",
+      "owner": "markl@hawaii.edu"
+    },
+
+    {
+      "title": "Basketball Game",
+      "date": "Tuesday 5/3 4pm",
+      "description": "Looking for people to play a 3 v 3 game of basket ball with.",
+      "interests": [
+        "Basketball"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Kapiolani Park",
+      "owner": "jparker@hawaii.edu"
+    },
+
+    {
+      "title": "Volleyball Game",
+      "date": "Tuesday 5/3 2pm",
+      "description": "Join me for a couple of volleyball games on the beach.",
+      "interests": [
+        "Volleyball"
+      ],
+      "skillLevel": "advanced",
+      "location": "Waikiki Beach",
+      "owner": "Jordm@hawaii.edu"
+    },
+
+    {
+      "title": "Olomana Trail",
+      "date": "Tuesday 5/3 8am",
+      "description": "Hike the Olomana Trail with me and my friends.",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Olomana Trail",
+      "owner": "John@hawaii.edu"
+    },
+
+    {
+      "title": "Yoga Session into weight lifting",
+      "date": "Wednesday 5/4 5am",
+      "description": "Doing yoga first as a means of warming up, then going into weight lifting after.",
+      "interests": [
+        "Yoga",
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "Ashdg@hawaii.edu"
+    },
+
+    {
+      "title": "Waimano Falls",
+      "date": "Wednesday 5/4 10am",
+      "description": "My favorite place to hike. Look forward to seeing you join me!",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Wamano Falls Trail",
+      "owner": "ktanaka@hawaii.edu"
+    },
+
+    {
+      "title": "Beach Day",
+      "date": "Thursday 5/5 12am",
+      "description": "Join me at the beach and we can go surfing, and swimming.",
+      "interests": [
+        "Swimming",
+        "Surfing"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Hanauma Bay",
+      "owner": "jasmineg@hawaii.edu"
+    },
+
+    {
+      "title": "Casual Workout session",
+      "date": "Thursday 5/5 10am",
+      "description": "Just a casual workout session. Not going too hard just trying to workout while I have the time.",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Planet Fitness",
+      "owner": "htowns@hawaii.edu"
+    },
+
+    {
+      "title": "Basketball Game",
+      "date": "Tuesday 5/5 12pm",
+      "description": "Basketball game warmup, before I go do some ww=eight lifting",
+      "interests": [
+        "Basketball",
+        "WeightLifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Ewa Beach Basketball Court",
+      "owner": "jeffersonh@hawaii.edu"
+    },
+
+    {
+      "title": "Full body strength training",
+      "date": "Friday 5/6 10am",
+      "description": "Doing Cardio and strength training",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Powerhouse Gym",
+      "owner": "mhutchi@hawaii.edu"
+    },
+
+    {
+      "title": "Warmup Yoga and run",
+      "date": "Friday 5/6 8am",
+      "description": "Doing some yoga and running to warmup before lifting some weights",
+      "interests": [
+        "Yoga",
+        "Running"
+      ],
+      "skillLevel": "Beginner",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "gadams@hawaii.edu"
+    },
+
+    {
+      "title": "Aiea Loop",
+      "date": "Saturday 5/7 12pm",
+      "description": "Hike the Aiea Loop trail and enjoy the incredible views of Halawa Valley",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Aiea Loop Trail",
+      "owner": "Jogrant@hawaii.edu"
+    },
+
+    {
+      "title": "Swimming, Surfing, Hiking",
+      "date": "Saturday 5/7 2pm",
+      "description": "Going to the beach to do some swimming and/or surfing, then going on a hiking trail later",
+      "interests": [
+        "Hiking",
+        "Swimming",
+        "Surfing"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Wakiki Beach",
+      "owner": "mgoldbe@hawaii.edu"
+    },
+
+    {
+      "title": "Yoga",
+      "date": "Sunday 5/8 5am",
+      "description": "Yoga session to relieve tension in the body",
+      "interests": [
+        "Yoga"
+      ],
+      "skillLevel": "Beginner",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "miavela@hawaii.edu"
+    },
+
+    {
+      "title": "Swim laps",
+      "date": "Sunday 5/8 10am",
+      "description": "Swimming laps around the loop to improve my swimming abilities, and my time.",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "intermediate",
+      "location": "Pearl City District Park Swimming Pool",
+      "owner": "kquinn@hawaii.edu"
+    },
+
+    {
+      "title": "Basketball or Volleyball Game",
+      "date": "Sunday 5/8 10am",
+      "description": "Looking for people to play a game or two of basketball or volleyball with me and my friends",
+      "interests": [
+        "Basketball",
+        "Volleyball"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Ala Moana Beach Park",
+      "owner": "jsilva@hawaii.edu"
+    }
+  ],
+
+  "loadAssetsFile":  false,
+  
   "monti": {
     "appId": "nN35bnjbnZPkimbMG",
     "appSecret": "54ded906-f25f-47d1-8fdc-d83a23cac1ff"
