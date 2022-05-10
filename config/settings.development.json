@@ -5,66 +5,478 @@
       "lastName": "Levy",
       "bio": "I like to run in the morning.",
       "year": "Junior",
+      "picture": "https://avatars.githubusercontent.com/u/77308146?s=70&v=4",
       "interests": [
         "Running",
-        "Lifting Weights"
+        "Weight lifting"
       ],
       "email": "grayson@hawaii.edu"
 
     },
 
     {
-      "firstName": "John",
-      "lastName": "Doe",
-      "bio": "I like to hike.",
-      "year": "Freshman",
+      "firstName": "Tanner",
+      "lastName": "Young",
+      "bio": "I love weight lifting and playing basketball for fun.",
+      "year": "Junior",
+      "picture": "https://avatars.githubusercontent.com/u/97702439?v=4",
+      "interests": [
+        "Weight lifting",
+        "Basketball"
+      ],
+      "email": "tannerky@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Devin",
+      "lastName": "Arquines",
+      "bio": "I like to go on runs.",
+      "year": "Sophomore",
+      "picture": "https://avatars.githubusercontent.com/u/97865370?s=70&v=4",
       "interests": [
         "Hiking",
-        "Lifting Weights"
+        "Running"
       ],
-      "email": "John@hawaii.edu"
+      "email": "darquine@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Philip",
+      "lastName": "Johnson",
+      "bio": "I like to go running and try new things.",
+      "year": "Other",
+      "picture": "https://www.ics.hawaii.edu/wp-content/uploads/2019/05/johnson-300x300.jpeg",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "johnson@hawaii.edu"
+
+    },
+    {
+      "firstName": "James",
+      "lastName": "Peterson",
+      "bio": "I love staying active and doing things outdoors.",
+      "year": "Sophomore",
+      "picture": "https://i.pinimg.com/originals/b9/46/7e/b9467eba7fcb13d79bccb702658f4108.jpg",
+      "interests": [
+        "Swimming",
+        "Running"
+      ],
+      "email": "Jamespet@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Kayla",
+      "lastName": "Jefferson",
+      "bio": "I love being in the water and the beach is like my second home.",
+      "year": "Freshman",
+      "picture": "https://images.squarespace-cdn.com/content/v1/5ef6be9113b6083384e742d6/1593816642654-QOZBWG9WEIKR588RCQ6X/diya+pfp.JPG",
+      "interests": [
+        "Swimming",
+        "Surfing"
+      ],
+      "email": "kjeffer@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Lia",
+      "lastName": "Matsumoto",
+      "bio": "I just started working out and am trying to stay consistent.",
+      "year": "Freshman",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1XzbDUQRdYq7shpfivuJn2CD6XeAjJbPMWg&usqp=CAU",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Yoga"
+      ],
+      "email": "liamat@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Maria",
+      "lastName": "Jones",
+      "bio": "I love running and going on hikes with friends especially.",
+      "year": "Junior",
+      "picture": "https://static01.nyt.com/images/2020/05/29/magazine/7mag-education-student-selfies-08/7mag-education-student-selfies-08-mobileMasterAt3x.jpg",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "maria1@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jordyn",
+      "lastName": "White",
+      "bio": "I've been working out for 2 years now and would love to find some friends to do it with.",
+      "year": "Junior",
+      "picture": "https://i.pinimg.com/736x/24/35/74/24357447f52256b25ab785a912fde98d--freshman-year-selfies.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Volleyball"
+      ],
+      "email": "jnwhite@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Alexis",
+      "lastName": "Rodriguez",
+      "bio": "I love the gym, let's be friends!",
+      "year": "Sophomore",
+      "picture": "https://www.superprof.ng/images/teachers/teacher-home-college-student-excited-help-and-guide-you-through-any-academic-subject.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running"
+      ],
+      "email": "alexisr@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Rodger",
+      "lastName": "Whitman",
+      "bio": "Just getting into this workout stuff, any and all help is appreciated.",
+      "year": "Freshman",
+      "picture": "https://www.superprof.com.au/images/teachers/teacher-home-college-student-offering-exceptional-help-for-any-struggling-high-school-student-with-math-and-science.jpg",
+      "interests": [
+        "Weight lifting",
+        "Swimming"
+      ],
+      "email": "rodwhit@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Ashley",
+      "lastName": "White",
+      "bio": "I love working out in groups, the extra motivation really helps me.",
+      "year": "Senior",
+      "picture": "https://pbs.twimg.com/media/CxfgAdXUsAAUpgh?format=jpg&name=large",
+      "interests": [
+        "Running",
+        "Weight lifting"
+      ],
+      "email": "ashle1@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "George",
+      "lastName": "Bowden",
+      "bio": "Working out with friends helps clear my mind.",
+      "year": "Senior",
+      "picture": "https://cfcc.edu/wp-content/uploads/2019/10/6-300x257.jpg",
+      "interests": [
+        "Weight lifting"
+      ],
+      "email": "geobow@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Klyde",
+      "lastName": "Johnson",
+      "bio": "I would love to make new gym friends, don't be afraid to say hi!",
+      "year": "Junior",
+      "picture": "https://cdn.thecollegeinvestor.com/wp-content/uploads/2014/01/Nic-Mayne-237x300.png",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Hiking"
+      ],
+      "email": "klydej@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Matthew",
+      "lastName": "Auslander",
+      "bio": "Hi everyone, you can call me Matt, I love hiking, swimming, and all things outdoors.",
+      "year": "Junior",
+      "picture": "https://m.media-amazon.com/images/M/MV5BOThhOWM3ODMtYTg5Mi00YTk4LWFhY2UtZWQwZGY1ZDNhZDk2XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+      "interests": [
+        "Hiking",
+        "Swimming"
+      ],
+      "email": "mattausl@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jonathan",
+      "lastName": "Brooks",
+      "bio": "I love weight lifting and have been for 4 years now.",
+      "year": "Sophomore",
+      "picture": "https://www.scu.edu/media/offices/provost/johnson-scholars/cohort-headshots-for-bios/class-of-2023/Gabe-Rodkey-1-360x359.JPG",
+      "interests": [
+        "Weight lifting"
+      ],
+      "email": "jbrooks@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "John",
+      "lastName": "Jackson",
+      "bio": "I love hiking here in Hawaii and would love to meet new people while doing so.",
+      "year": "Sophomore",
+      "picture": "https://www.al.com/resizer/l44tvCT_ya1cFRgYdwaciILaE_c=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/DSAYYVERT5DPZELVT77OO6KFUA.jpg",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "jjackson@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Mark",
+      "lastName": "Lue",
+      "bio": "Getting into working out more consistently, having friends that do the same helps me.",
+      "year": "Other",
+      "picture": "https://www.wjtv.com/wp-content/uploads/sites/72/2019/06/JESSY203_1560904860382.jpg_92832392_ver1.0.jpg?w=600&h=600&crop=1",
+      "interests": [
+        "Weight lifting",
+        "Running"
+      ],
+      "email": "markl@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jonah",
+      "lastName": "Parker",
+      "bio": "I like to play basketball and lift weights on my free time.",
+      "year": "Senior",
+      "picture": "https://daily-voice-res.cloudinary.com/image/upload/c_fill,dpr_auto,f_auto,q_auto:eco,w_640/Screen_Shot_2016-05-05_at_10.23.33_AM_a2emmk",
+      "interests": [
+        "Weight lifting",
+        "Basketball"
+      ],
+      "email": "jparker@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jordan",
+      "lastName": "Matthews",
+      "bio": "I love playing Volleyball and working out.",
+      "year": "Senior",
+      "picture": "https://i.ebayimg.com/images/g/eSMAAOSwfiZcpWI-/s-l300.jpg",
+      "interests": [
+        "Weight lifting",
+        "Volleyball"
+      ],
+      "email": "Jordm@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Elle",
+      "lastName": "Siu",
+      "bio": "I love going on runs and hiking with my friends.",
+      "year": "Freshman",
+      "picture": "https://media.istockphoto.com/photos/young-asian-woman-takign-a-selfie-picture-id1173427031?k=20&m=1173427031&s=612x612&w=0&h=wsL8hOM6geY8grq997FxYRJqQ3y4CZZP-UciUKCHALo=",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "ellesiu@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Ashley",
+      "lastName": "Douglas",
+      "bio": "Hi! You guys can call me Ash, I love yoga, running, and recently got into weight training.",
+      "year": "Junior",
+      "picture": "https://media.istockphoto.com/photos/student-in-library-picture-id1023549634?k=20&m=1023549634&s=612x612&w=0&h=bdgaOF6tgbkpeRHKEFnfQlB8STTqmegxdfsMaAriDK4=",
+      "interests": [
+        "Yoga",
+        "Running",
+        "Weight lifting"
+      ],
+      "email": "Ashdg@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Kyla",
+      "lastName": "Tanaka",
+      "bio": "I love going on hikes and yoga. Hope we can be friends!",
+      "year": "Sophomore",
+      "picture": "https://media.istockphoto.com/photos/student-in-library-picture-id1023549634?k=20&m=1023549634&s=612x612&w=0&h=bdgaOF6tgbkpeRHKEFnfQlB8STTqmegxdfsMaAriDK4=",
+      "interests": [
+        "Hiking",
+        "Yoga"
+      ],
+      "email": "ktanaka@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jasmine",
+      "lastName": "George",
+      "bio": "I love going to the beach and being outside in general.",
+      "year": "Sophomore",
+      "picture": "https://img.freepik.com/free-photo/asian-beautiful-woman-make-selfie_273609-2692.jpg?w=2000",
+      "interests": [
+        "Swimming",
+        "Surfing",
+        "Hiking"
+      ],
+      "email": "jasmineg@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Haley",
+      "lastName": "Towns",
+      "bio": "I like working out when I have the time and would love to have some people to do it with.",
+      "year": "Senior",
+      "picture": "https://static01.nyt.com/images/2017/02/15/learning/Fogel-Shrive1LN/Fogel-Shrive1LN-superJumbo.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Yoga"
+      ],
+      "email": "htowns@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jefferson",
+      "lastName": "Hill",
+      "bio": "I love lifting weights and playing pick up basketball!",
+      "year": "Senior",
+      "picture": "http://3.bp.blogspot.com/-z7k-vu3Ws60/VATttxuJJ-I/AAAAAAAAFyI/c40ATn-w8C0/s1600/photo.JPG",
+      "interests": [
+        "Weight lifting",
+        "Basketball"
+      ],
+      "email": "jeffersonh@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Michael",
+      "lastName": "Hutchison",
+      "bio": "Hi all! I'm Michael and like working out and staying healthy.",
+      "year": "Freshman",
+      "picture": "https://admissions.missouri.edu/wp-content/uploads/2019/03/Mustafa-_-563x338.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Volleyball"
+      ],
+      "email": "mhutchi@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Gregory",
+      "lastName": "Adams",
+      "bio": "Hi! Doing my best to stay active and healthy, lets do it together!",
+      "year": "Junior",
+      "picture": "https://www.colorado.edu/today/sites/default/files/styles/large_square_thumbnail/public/callout/santaella-gus.jpg?itok=atMHWgqc",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Yoga"
+      ],
+      "email": "gadams@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jocelyn",
+      "lastName": "Grant",
+      "bio": "Hey everyone! I love being outside and meeting new people.",
+      "year": "Senior",
+      "picture": "https://assets.teenvogue.com/photos/626b03180979f2c5ace0ab2b/16:9/w_992,h_558,c_limit/Pol_StudentJournalist_Apr28_PROMO.jpg",
+      "interests": [
+        "Hiking",
+        "Running",
+        "Yoga"
+      ],
+      "email": "Jogrant@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Mike",
+      "lastName": "Goldberg",
+      "bio": "I love being outside and enjoying the Hawaii weather",
+      "year": "Senior",
+      "picture": "https://www.jesus.cam.ac.uk/sites/default/files/styles/quote/public/quotes/tom-pic.jpg.jpeg?itok=hp_PyBSk",
+      "interests": [
+        "Hiking",
+        "Swimming",
+        "Surfing"
+      ],
+      "email": "mgoldbe@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Mia",
+      "lastName": "Velasquez",
+      "bio": "Hi everyone, I'm Mia and I love yoga and am very passionate about stay healthy.",
+      "year": "Freshman",
+      "picture": "https://images.pond5.com/charming-young-happy-woman-obesity-footage-093517739_iconm.jpeg",
+      "interests": [
+        "Hiking",
+        "Yoga"
+      ],
+      "email": "miavela@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Kayla",
+      "lastName": "Quinn",
+      "bio": "Hi everyone, I really enjoy the Hawaii weather and love spending time in it.",
+      "year": "Freshman",
+      "picture": "https://d3qi0qp55mx5f5.cloudfront.net/physicalsciences/i/basic_pages/EliseHinkle_LR.jpg?mtime=1650553923",
+      "interests": [
+        "Hiking",
+        "Swimming"
+      ],
+      "email": "kquinn@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Joe",
+      "lastName": "Silva",
+      "bio": "I like working out and playing sports.",
+      "year": "Junior",
+      "picture": "https://preview.redd.it/16m01bidoyd41.jpg?auto=webp&s=dd4f293a624b55940e828531edfcde965aac8bcc",
+      "interests": [
+        "Weight lifting",
+        "Basketball",
+        "Volleyball",
+        "Surfing"
+      ],
+      "email": "jsilva@hawaii.edu"
 
     }
 
   ],
 
-  "defaultSessions": [
-    {
-      "title": "Morning Run",
-      "date": "Monday 4/25 6am",
-      "description": "Morning run through waikiki",
-      "interests": [
-        "Running"
-      ],
-      "skillLevel": "intermediate",
-      "location": "zoo parking lot",
-      "owner": "grayson@hawaii.edu"
-    },
+  "loadAssetsFile":  false,
 
-    {
-      "title": "Evening Run",
-      "date": "Monday 4/25 6pm",
-      "description": "Evening run through waikiki",
-      "interests": [
-        "Running"
-      ],
-      "skillLevel": "intermediate",
-      "location": "zoo parking lot",
-      "owner": "grayson@hawaii.edu"
-    },
-
-    {
-      "title": "Sunrise Hike",
-      "date": "Tuesday 4/26 5am",
-      "description": "Sunrise hike at the Pali notches",
-      "interests": [
-        "Hiking"
-      ],
-      "skillLevel": "advanced",
-      "location": "Pali Hwy Lookout",
-      "owner": "John@hawaii.edu"
-    }
-    ],
-
-  "loadAssetsFile":  false
+  "monti": {
+    "appId": "nN35bnjbnZPkimbMG",
+    "appSecret": "54ded906-f25f-47d1-8fdc-d83a23cac1ff"
+  }
 }
