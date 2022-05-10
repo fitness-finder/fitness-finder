@@ -86,8 +86,6 @@ class FindProfilePage extends React.Component {
     const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const emails = _.pluck(ProfilesInterests.collection.find({ interest: { $in: this.state.interests } }).fetch(), 'profile');
-    const emailsall = _.pluck(Profiles.collection.find().fetch(), 'email');
-    const profileDataAll = emailsall.map(email => getProfileData(email));
     const profileData = _.uniq(emails).map(email => getProfileData(email));
     return (
       <div id="parent">
@@ -102,14 +100,6 @@ class FindProfilePage extends React.Component {
             {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
           </Card.Group>
         </Container>
-        <div style={{ background: '#024731', paddingTop: '20px', paddingBottom: '20px' }}>
-          <Header as="h1" textAlign='center' inverted>All Profiles</Header>
-          <Container id="profile-list">
-            <Card.Group style={{ paddingTop: '10px' }}>
-              {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
-            </Card.Group>
-          </Container>
-        </div>
       </div>
     );
   }
