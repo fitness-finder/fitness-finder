@@ -4,7 +4,7 @@ import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { Sessions } from '../../api/sessions/Sessions';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
-import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /**
  * In Bowfolios, insecure mode is enabled, so it is possible to update the server's Mongo database by making
@@ -44,26 +44,32 @@ Meteor.methods({
     interests.map((interest) => ProfilesInterests.collection.insert({ profile: email, interest }));
   },
 });
-/**
- const addProjectMethod = 'Projects.add';
 
-Creates a new project in the Projects collection, and also updates ProfilesProjects and ProjectsInterests.
+const joinSessionMethod = 'Session.join';
+
 Meteor.methods({
-  'Projects.add'({ name, description, picture, interests, participants, homepage }) {
-    Projects.collection.insert({ name, description, picture, homepage });
-    ProfilesProjects.collection.remove({ project: name });
-    ProjectsInterests.collection.remove({ project: name });
-    if (interests) {
-      interests.map((interest) => ProjectsInterests.collection.insert({ project: name, interest }));
+  'Session.join'({ email, sessionID }) {
+    if (ProfilesParticipation.collection.findOne({ profile: email, sessionID }) ||
+      (ProfilesSessions.collection.findOne({ profile: email, sessionID }))) {
+      throw new Meteor.Error('You already joined this session.');
     } else {
-      throw new Meteor.Error('At least one interest is required.');
-    }
-    if (participants) {
-      participants.map((participant) => ProfilesProjects.collection.insert({ project: name, profile: participant }));
+      const session = ((Sessions.collection.findOne({ _id: sessionID }).title));
+      ProfilesParticipation.collection.remove({ profile: email, sessionID });
+      ProfilesParticipation.collection.insert({ profile: email, sessionID, session });
+
     }
   },
 });
- */
+
+const unJoinSessionMethod = 'Session.unJoin';
+
+Meteor.methods({
+  'Session.unJoin'({ email, sessionID }) {
+    ProfilesParticipation.collection.remove({ profile: email, sessionID });
+
+  },
+});
+
 const addSessionMethod = 'Sessions.add';
 
 Meteor.methods({
@@ -71,14 +77,23 @@ Meteor.methods({
     const sessionID = Sessions.collection.insert({ title, date, description, skillLevel, location });
     ProfilesSessions.collection.insert({ profile: owner, sessionID, session: title });
     if (interests) {
+      SessionsInterests.collection.remove({ sessionID });
       interests.map(interest => SessionsInterests.collection.insert({ sessionID, interest }));
     } else {
       throw new Meteor.Error('At least one interest is required.');
     }
-    SessionsParticipants.collection.insert({ sessionID, participants:
-        (`${Profiles.collection.findOne({ email: owner }).firstName
-        } ${Profiles.collection.findOne({ email: owner }).lastName}`) });
   },
 });
 
-export { updateProfileMethod, addSessionMethod };
+const deleteSessionMethod = 'Sessions.delete';
+
+Meteor.methods({
+  'Sessions.delete'({ sessionID }) {
+    ProfilesParticipation.collection.remove({ sessionID });
+    ProfilesSessions.collection.remove({ sessionID });
+    Sessions.collection.remove({ _id: sessionID });
+    SessionsInterests.collection.remove({ sessionID });
+  },
+});
+
+export { updateProfileMethod, addSessionMethod, joinSessionMethod, deleteSessionMethod, unJoinSessionMethod };

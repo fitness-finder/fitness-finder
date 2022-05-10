@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class HomePage {
+class YourProfilePage {
   constructor() {
-    this.pageId = '#home-page';
+    this.pageId = '#your-profile-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -35,7 +35,7 @@ class HomePage {
     // Type in new first name.
     await testController.typeText('#firstName', newFirstName);
     // Submit it.
-    await testController.click('#home-page-submit');
+    await testController.click('#your-profile-page-submit');
     // Click the OK button on the Sweet Alert.
     await testController.click(Selector('.swal-button--confirm'));
     // Check that the field is updated.
@@ -43,10 +43,10 @@ class HomePage {
     // Now restore original value.
     await testController.selectText('#firstName').pressKey('delete');
     await testController.typeText('#firstName', firstName);
-    await testController.click('#home-page-submit');
+    await testController.click('#your-profile-page-submit');
     await testController.click(Selector('.swal-button--confirm'));
     await testController.expect(Selector('#firstName').value).eql(firstName);
   }
 }
 
-export const homePage = new HomePage();
+export const yourProfilePage = new YourProfilePage();

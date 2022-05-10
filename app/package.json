@@ -1,5 +1,5 @@
 {
-  "name": "bowfolios",
+  "name": "fitness-finder",
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.15.4",

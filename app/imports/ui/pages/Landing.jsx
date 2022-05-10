@@ -15,7 +15,7 @@ const styles2 = {
 class Landing extends React.Component {
   render() {
     return (
-      <div className="parent">
+      <div id="landing-page" className="parent">
         <div className="header-background">
           <Grid verticalAlign='middle' textAlign='center' container>
             <Grid.Column>

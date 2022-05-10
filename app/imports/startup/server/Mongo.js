@@ -5,9 +5,9 @@ import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
 import { Interests } from '../../api/interests/Interests';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
-import { SessionsParticipants } from '../../api/sessions/SessionsParticipants';
 import { SessionsInterests } from '../../api/sessions/SessionsInterests';
 import { Sessions } from '../../api/sessions/Sessions';
+import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
 
 /* eslint-disable no-console */
 
@@ -25,6 +25,12 @@ function addInterest(interest) {
   Interests.collection.update({ name: interest }, { $set: { name: interest } }, { upsert: true });
 }
 
+function joinSession(email, sessionID) {
+  const session = ((Sessions.collection.findOne({ _id: sessionID }).title));
+  ProfilesParticipation.collection.remove({ profile: email, sessionID });
+  ProfilesParticipation.collection.insert({ profile: email, sessionID, session });
+}
+
 /** Defines a new user and associated profile. Error if user already exists. */
 function addProfile({ firstName, lastName, bio, year, interests, picture, email, role }) {
   console.log(`Defining profile ${email}`);
@@ -38,17 +44,14 @@ function addProfile({ firstName, lastName, bio, year, interests, picture, email,
   interests.map(interest => addInterest(interest));
 }
 
-function addSession({ title, date, description, interests, skillLevel, location, owner }) {
+function addSession({ title, date, description, interests, skillLevel, location, owner, participants }) {
   console.log(`Defining session ${title}`);
   const sessionID = Sessions.collection.insert({ title, date, description, skillLevel, location });
-  console.log(` this value is ${sessionID}`);
+  console.log(` _id value is ${sessionID}`);
   ProfilesSessions.collection.insert({ profile: owner, sessionID, session: title });
-  interests.map(interest => SessionsInterests.collection.insert({ sessionID, interest }));
-  SessionsParticipants.collection.insert({ sessionID, participants:
-  (`${Profiles.collection.findOne({ email: owner }).firstName
-  } ${Profiles.collection.findOne({ email: owner }).lastName}`) });
-  // Make sure interests are defined in the Interests collection if they weren't already.
+  interests.map(interest => SessionsInterests.collection.insert({ sessionID: sessionID, interest: interest }));
   interests.map(interest => addInterest(interest));
+  participants.map(email => joinSession(email, sessionID));
 }
 
 if (Meteor.users.find().count() === 0) {

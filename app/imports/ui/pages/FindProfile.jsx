@@ -10,8 +10,6 @@ import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { Interests } from '../../api/interests/Interests';
 import { Profiles } from '../../api/profiles/Profiles';
 import { ProfilesInterests } from '../../api/profiles/ProfilesInterests';
-import { ProfilesProjects } from '../../api/profiles/ProfilesProjects';
-import { Projects } from '../../api/projects/Projects';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { ProfilesSessions } from '../../api/profiles/ProfilesSessions';
 import { ProfilesParticipation } from '../../api/profiles/ProfilesParticipation';
@@ -66,7 +64,7 @@ MakeCard.propTypes = {
 };
 
 /** Renders the Profile Collection as a set of Cards. */
-class Filter extends React.Component {
+class FindProfilePage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -118,7 +116,7 @@ class Filter extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-Filter.propTypes = {
+FindProfilePage.propTypes = {
   ready: PropTypes.bool.isRequired,
 };
 
@@ -133,4 +131,4 @@ export default withTracker(() => {
   return {
     ready: sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready(),
   };
-})(Filter);
+})(FindProfilePage);

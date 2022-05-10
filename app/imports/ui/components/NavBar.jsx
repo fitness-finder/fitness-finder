@@ -27,6 +27,17 @@ class NavBar extends React.Component {
             to="/yourProfile"
             key='yourProfile'>Your Profile</Menu.Item>
         ) : ''}
+        {this.props.currentUser ? (
+          [<Menu.Item
+            as={NavLink}
+            style={textStyle}
+            id="yourSessionsMenuItem"
+            activeClassName="active"
+            exact
+            to="/yourSessions"
+            key='yourSessions'>Your Sessions
+          </Menu.Item>]
+        ) : ''}
         <Menu.Item
           as={NavLink}
           style={textStyle}
@@ -36,11 +47,20 @@ class NavBar extends React.Component {
           to="/profiles"
           key='profiles'>Profiles
         </Menu.Item>
+        <Menu.Item
+          as={NavLink}
+          style={textStyle}
+          id="findProfileMenuItem"
+          activeClassName="active"
+          exact
+          to="/findprofile"
+          key='findprofile'>Find a Profile
+        </Menu.Item>
         {this.props.currentUser ? (
           [<Menu.Item
             as={NavLink}
             style={textStyle}
-            id="addProjectMenuItem"
+            id="addSessionMenuItem"
             activeClassName="active"
             exact
             to="/addSession"
@@ -50,20 +70,11 @@ class NavBar extends React.Component {
         <Menu.Item
           as={NavLink}
           style={textStyle}
-          id="projectsMenuItem"
+          id="sessionsMenuItem"
           activeClassName="active"
           exact
           to="/sessions"
           key='sessions'>Find a Session
-        </Menu.Item>
-        <Menu.Item
-          as={NavLink}
-          style={textStyle}
-          id="interestsMenuItem"
-          activeClassName="active"
-          exact
-          to="/interests"
-          key='interests'>Interests
         </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Menu.Item as={NavLink} style={textStyle} id="adminMenuItem" activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>

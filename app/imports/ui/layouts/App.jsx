@@ -11,12 +11,12 @@ import YourProfile from '../pages/YourProfile';
 import Profiles from '../pages/Profiles';
 import AddSession from '../pages/AddSession';
 import Sessions from '../pages/Sessions';
-import Filter from '../pages/Filter';
-import Interests from '../pages/Interests';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import YourSessions from '../pages/YourSessions';
+import FindProfile from '../pages/FindProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -29,11 +29,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <ProtectedRoute path="/yourprofile" component={YourProfile}/>
+              <ProtectedRoute path="/yourSessions" component={YourSessions}/>
               <Route path="/profiles" component={Profiles}/>
+              <Route path="/findprofile" component={FindProfile}/>
               <Route path="/sessions" component={Sessions}/>
-              <Route path="/interests" component={Interests}/>
               <ProtectedRoute path="/addSession" component={AddSession}/>
-              <ProtectedRoute path="/filter" component={Filter}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/signout" component={Signout}/>

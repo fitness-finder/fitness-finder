@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class InterestsPage {
+class SessionsPage {
   constructor() {
-    this.pageId = '#interests-page';
+    this.pageId = '#sessions-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -12,10 +12,10 @@ class InterestsPage {
   }
 
   /** Checks that the current page has at least nine interests on it.  */
-  async hasDefaultInterests(testController) {
+  async hasDefaultProjects(testController) {
     const cardCount = Selector('.ui .card').count;
-    await testController.expect(cardCount).gte(9);
+    await testController.expect(cardCount).gte(35);
   }
 }
 
-export const interestsPage = new InterestsPage();
+export const sessionsPage = new SessionsPage();
