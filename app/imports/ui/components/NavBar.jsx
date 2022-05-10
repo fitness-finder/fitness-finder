@@ -47,6 +47,15 @@ class NavBar extends React.Component {
           to="/profiles"
           key='profiles'>Profiles
         </Menu.Item>
+        <Menu.Item
+          as={NavLink}
+          style={textStyle}
+          id="findProfileMenuItem"
+          activeClassName="active"
+          exact
+          to="/findprofile"
+          key='findprofile'>Find a Profile
+        </Menu.Item>
         {this.props.currentUser ? (
           [<Menu.Item
             as={NavLink}
