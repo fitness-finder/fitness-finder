@@ -483,7 +483,11 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Honolulu Zoo parking lot",
-      "owner": "grayson@hawaii.edu"
+      "owner": "grayson@hawaii.edu",
+      "participants": [
+        "Jogrant@hawaii.edu",
+        "jnwhite@hawaii.edu"
+      ]
     },
 
     {
@@ -495,7 +499,11 @@
       ],
       "skillLevel": "Advanced",
       "location": "Pali Hwy Lookout",
-      "owner": "johnson@hawaii.edu"
+      "owner": "johnson@hawaii.edu",
+      "participants": [
+        "Jogrant@hawaii.edu",
+        "mgoldbe@hawaii.edu"
+      ]
     },
 
     {
@@ -507,7 +515,10 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Anytime Fitness Honolulu",
-      "owner": "tannerky@hawaii.edu"
+      "owner": "tannerky@hawaii.edu",
+      "participants": [
+        "jsilva@hawaii.edu"
+      ]
     },
 
     {
@@ -519,7 +530,11 @@
       ],
       "skillLevel": "Advanced",
       "location": "Pali Hwy Lookout",
-      "owner": "liamat@hawaii.edu"
+      "owner": "liamat@hawaii.edu",
+      "participants": [
+        "Jogrant@hawaii.edu",
+        "jnwhite@hawaii.edu"
+      ]
     },
 
     {
@@ -531,7 +546,11 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Powerhouse Gym Aiea",
-      "owner": "jnwhite@hawaii.edu"
+      "owner": "jnwhite@hawaii.edu",
+      "participants": [
+        "jsilva@hawaii.edu",
+        "markl@hawaii.edu"
+      ]
     },
 
     {
@@ -543,7 +562,11 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Moanalua Community pool",
-      "owner": "Jamespet@hawaii.edu"
+      "owner": "Jamespet@hawaii.edu",
+      "participants": [
+        "mgoldbe@hawaii.edu",
+        "kquinn@hawaii.edu"
+      ]
     },
 
     {
@@ -555,7 +578,10 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Koko Head trail",
-      "owner": "klydej@hawaii.edu"
+      "owner": "klydej@hawaii.edu",
+      "participants": [
+        "kquinn@hawaii.edu"
+      ]
     },
 
     {
@@ -567,7 +593,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "Diamond Head trail",
-      "owner": "darquine@hawaii.edu"
+      "owner": "darquine@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -579,7 +607,10 @@
       ],
       "skillLevel": "Beginner",
       "location": "Kakaako Park",
-      "owner": "maria1@hawaii.edu"
+      "owner": "maria1@hawaii.edu",
+      "participants": [
+        "htowns@hawaii.edu"
+      ]
     },
 
     {
@@ -591,7 +622,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "UH Manoa Warrior Recreation Center",
-      "owner": "Ashdg@hawaii.edu"
+      "owner": "Ashdg@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -603,7 +636,11 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Waimea Bay",
-      "owner": "kjeffer@hawaii.edu"
+      "owner": "kjeffer@hawaii.edu",
+      "participants": [
+        "mgoldbe@hawaii.edu",
+        "kquinn@hawaii.edu"
+      ]
     },
 
     {
@@ -615,7 +652,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "Manoa Falls Trail",
-      "owner": "maria1@hawaii.edu"
+      "owner": "maria1@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -627,7 +666,10 @@
       ],
       "skillLevel": "Beginner",
       "location": "Ala Moana Park",
-      "owner": "jjackson@hawaii.edu"
+      "owner": "jjackson@hawaii.edu",
+      "participants": [
+        "Jogrant@hawaii.edu"
+      ]
     },
 
     {
@@ -639,7 +681,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "Kalihi Valley District Swimming Pool",
-      "owner": "rodwhit@hawaii.edu"
+      "owner": "rodwhit@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -651,7 +695,11 @@
       ],
       "skillLevel": "Intermediate",
       "location": "24 Hour Fitness Kapolei",
-      "owner": "ashle1@hawaii.edu"
+      "owner": "ashle1@hawaii.edu",
+      "participants": [
+        "tannerky@hawaii.edu",
+        "jsilva@hawaii.edu"
+      ]
     },
 
     {
@@ -663,7 +711,12 @@
       ],
       "skillLevel": "Advanced",
       "location": "Orangetheory Fitness",
-      "owner": "geobow@hawaii.edu"
+      "owner": "geobow@hawaii.edu",
+      "participants": [
+        "tannerky@hawaii.edu",
+        "jsilva@hawaii.edu",
+        "klydej@hawaii.edu"
+      ]
     },
 
     {
@@ -675,7 +728,10 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Moanalua Swimming Pool",
-      "owner": "mattausl@hawaii.edu"
+      "owner": "mattausl@hawaii.edu",
+      "participants": [
+        "kquinn@hawaii.edu"
+      ]
     },
 
     {
@@ -687,7 +743,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "Powerhouse Gym",
-      "owner": "jbrooks@hawaii.edu"
+      "owner": "jbrooks@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -699,7 +757,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "Makapu'u Point Lighthouse Trail",
-      "owner": "jjackson@hawaii.edu"
+      "owner": "jjackson@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -712,7 +772,12 @@
       ],
       "skillLevel": "Beginner",
       "location": "Kakaako Park",
-      "owner": "markl@hawaii.edu"
+      "owner": "markl@hawaii.edu",
+      "participants": [
+        "jnwhite@hawaii.edu",
+        "Jogrant@hawaii.edu",
+        "grayson@hawaii.edu"
+      ]
     },
 
     {
@@ -724,7 +789,10 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Kapiolani Park",
-      "owner": "jparker@hawaii.edu"
+      "owner": "jparker@hawaii.edu",
+      "participants": [
+        "jsilva@hawaii.edu"
+      ]
     },
 
     {
@@ -736,7 +804,10 @@
       ],
       "skillLevel": "advanced",
       "location": "Waikiki Beach",
-      "owner": "Jordm@hawaii.edu"
+      "owner": "Jordm@hawaii.edu",
+      "participants": [
+        "jsilva@hawaii.edu"
+      ]
     },
 
     {
@@ -748,7 +819,9 @@
       ],
       "skillLevel": "Advanced",
       "location": "Olomana Trail",
-      "owner": "mgoldbe@hawaii.edu"
+      "owner": "mgoldbe@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -761,7 +834,10 @@
       ],
       "skillLevel": "Intermediate",
       "location": "UH Manoa Warrior Recreation Center",
-      "owner": "Ashdg@hawaii.edu"
+      "owner": "Ashdg@hawaii.edu",
+      "participants": [
+        "alexisr@hawaii.edu"
+      ]
     },
 
     {
@@ -773,7 +849,9 @@
       ],
       "skillLevel": "Advanced",
       "location": "Wamano Falls Trail",
-      "owner": "ktanaka@hawaii.edu"
+      "owner": "ktanaka@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -786,7 +864,11 @@
       ],
       "skillLevel": "Beginner",
       "location": "Hanauma Bay",
-      "owner": "jasmineg@hawaii.edu"
+      "owner": "jasmineg@hawaii.edu",
+      "participants": [
+        "liamat@hawaii.edu",
+        "alexisr@hawaii.edu"
+      ]
     },
 
     {
@@ -798,7 +880,11 @@
       ],
       "skillLevel": "Beginner",
       "location": "Planet Fitness",
-      "owner": "htowns@hawaii.edu"
+      "owner": "htowns@hawaii.edu",
+      "participants": [
+        "liamat@hawaii.edu",
+        "klydej@hawaii.edu"
+      ]
     },
 
     {
@@ -811,7 +897,12 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Ewa Beach Basketball Court",
-      "owner": "jeffersonh@hawaii.edu"
+      "owner": "jeffersonh@hawaii.edu",
+      "participants": [
+        "tannerky@hawaii.edu",
+        "jsilva@hawaii.edu",
+        "markl@hawaii.edu"
+      ]
     },
 
     {
@@ -823,7 +914,9 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Powerhouse Gym",
-      "owner": "mhutchi@hawaii.edu"
+      "owner": "mhutchi@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -836,7 +929,9 @@
       ],
       "skillLevel": "Beginner",
       "location": "UH Manoa Warrior Recreation Center",
-      "owner": "gadams@hawaii.edu"
+      "owner": "gadams@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -848,7 +943,11 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Aiea Loop Trail",
-      "owner": "Jogrant@hawaii.edu"
+      "owner": "Jogrant@hawaii.edu",
+      "participants": [
+        "htowns@hawaii.edu",
+        "alexisr@hawaii.edu"
+      ]
     },
 
     {
@@ -862,7 +961,10 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Waikiki Beach",
-      "owner": "mgoldbe@hawaii.edu"
+      "owner": "mgoldbe@hawaii.edu",
+      "participants": [
+        "htowns@hawaii.edu"
+      ]
     },
 
     {
@@ -874,7 +976,10 @@
       ],
       "skillLevel": "Beginner",
       "location": "UH Manoa Warrior Recreation Center",
-      "owner": "miavela@hawaii.edu"
+      "owner": "miavela@hawaii.edu",
+      "participants": [
+        "liamat@hawaii.edu"
+      ]
     },
 
     {
@@ -886,7 +991,9 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Pearl City District Park Swimming Pool",
-      "owner": "kquinn@hawaii.edu"
+      "owner": "kquinn@hawaii.edu",
+      "participants": [
+      ]
     },
 
     {
@@ -899,7 +1006,12 @@
       ],
       "skillLevel": "Intermediate",
       "location": "Ala Moana Beach Park",
-      "owner": "jsilva@hawaii.edu"
+      "owner": "jsilva@hawaii.edu",
+      "participants": [
+        "liamat@hawaii.edu",
+        "alexisr@hawaii.edu",
+        "klydej@hawaii.edu"
+      ]
     }
   ],
 
