@@ -477,12 +477,12 @@
     {
       "title": "Evening Run",
       "date": "Monday 4/25 6pm",
-      "description": "Evening run through waikiki",
+      "description": "Evening run through Waikiki",
       "interests": [
         "Running"
       ],
       "skillLevel": "Intermediate",
-      "location": "zoo parking lot",
+      "location": "Honolulu Zoo parking lot",
       "owner": "grayson@hawaii.edu"
     },
 
@@ -503,7 +503,7 @@
       "date": "Wednesday 4/27 12am",
       "description": "Upper body workout",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Intermediate",
       "location": "Anytime Fitness Honolulu",
@@ -515,7 +515,7 @@
       "date": "Wednesday 4/27 10am",
       "description": "Exercises to strengthen and work on abs",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Advanced",
       "location": "Pali Hwy Lookout",
@@ -527,7 +527,7 @@
       "date": "Thursday 4/28 8am",
       "description": "Workout major muscle groups for full body strength and coordination",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Intermediate",
       "location": "Powerhouse Gym Aiea",
@@ -554,7 +554,7 @@
         "Hiking"
       ],
       "skillLevel": "Intermediate",
-      "location": "Koko head trail",
+      "location": "Koko Head trail",
       "owner": "kyldej@hawaii.edu"
     },
 
@@ -566,7 +566,7 @@
         "Hiking"
       ],
       "skillLevel": "Beginner",
-      "location": "Diamond head trail",
+      "location": "Diamond Head trail",
       "owner": "darquine@hawaii.edu"
     },
 
@@ -609,7 +609,7 @@
     {
       "title": "Manoa Falls",
       "date": "Saturday 4/30 8am",
-      "description": "Hike the manoa falls trail in the morning",
+      "description": "Hike the Manoa falls trail in the morning",
       "interests": [
         "Hiking"
       ],
@@ -645,9 +645,9 @@
     {
       "title": "Workout for lower body",
       "date": "Sunday 5/1 9am",
-      "description": "Workout lower body. Includes weightlifting and machine workouts",
+      "description": "Workout lower body. Includes weight lifting and machine workouts",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Intermediate",
       "location": "24 Hour Fitness Kapolei",
@@ -659,7 +659,7 @@
       "date": "Sunday 5/1 8am",
       "description": "Doing things like pull ups, push ups, bench press etc. with and without weights",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Advanced",
       "location": "Orangetheory Fitness",
@@ -708,7 +708,7 @@
       "description": "Doing a morning run before I start working out.",
       "interests": [
         "Running",
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Beginner",
       "location": "Kakaako Park",
@@ -757,7 +757,7 @@
       "description": "Doing yoga first as a means of warming up, then going into weight lifting after.",
       "interests": [
         "Yoga",
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Intermediate",
       "location": "UH Manoa Warrior Recreation Center",
@@ -794,7 +794,7 @@
       "date": "Thursday 5/5 10am",
       "description": "Just a casual workout session. Not going too hard just trying to workout while I have the time.",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Beginner",
       "location": "Planet Fitness",
@@ -804,10 +804,10 @@
     {
       "title": "Basketball Game",
       "date": "Tuesday 5/5 12pm",
-      "description": "Basketball game warmup, before I go do some ww=eight lifting",
+      "description": "Basketball game warmup, before I go do some weight lifting",
       "interests": [
         "Basketball",
-        "WeightLifting"
+        "Weight lifting"
       ],
       "skillLevel": "Intermediate",
       "location": "Ewa Beach Basketball Court",
@@ -819,7 +819,7 @@
       "date": "Friday 5/6 10am",
       "description": "Doing Cardio and strength training",
       "interests": [
-        "Weight Lifting"
+        "Weight lifting"
       ],
       "skillLevel": "Intermediate",
       "location": "Powerhouse Gym",
@@ -861,7 +861,7 @@
         "Surfing"
       ],
       "skillLevel": "Intermediate",
-      "location": "Wakiki Beach",
+      "location": "Waikiki Beach",
       "owner": "mgoldbe@hawaii.edu"
     },
 
@@ -884,7 +884,7 @@
       "interests": [
         "Swimming"
       ],
-      "skillLevel": "intermediate",
+      "skillLevel": "Intermediate",
       "location": "Pearl City District Park Swimming Pool",
       "owner": "kquinn@hawaii.edu"
     },
@@ -904,7 +904,7 @@
   ],
 
   "loadAssetsFile":  false,
-  
+
   "monti": {
     "appId": "nN35bnjbnZPkimbMG",
     "appSecret": "54ded906-f25f-47d1-8fdc-d83a23cac1ff"
