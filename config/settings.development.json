@@ -5,24 +5,469 @@
       "lastName": "Levy",
       "bio": "I like to run in the morning.",
       "year": "Junior",
+      "picture": "https://avatars.githubusercontent.com/u/77308146?s=70&v=4",
       "interests": [
         "Running",
-        "Lifting Weights"
+        "Weight lifting"
       ],
       "email": "grayson@hawaii.edu"
 
     },
 
     {
-      "firstName": "John",
-      "lastName": "Doe",
-      "bio": "I like to hike.",
-      "year": "Freshman",
+      "firstName": "Tanner",
+      "lastName": "Young",
+      "bio": "I love weight lifting and playing basketball for fun.",
+      "year": "Junior",
+      "picture": "https://avatars.githubusercontent.com/u/97702439?v=4",
+      "interests": [
+        "Weight lifting",
+        "Basketball"
+      ],
+      "email": "tannerky@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Devin",
+      "lastName": "Arquines",
+      "bio": "I like to go on runs.",
+      "year": "Sophomore",
+      "picture": "https://avatars.githubusercontent.com/u/97865370?s=70&v=4",
       "interests": [
         "Hiking",
-        "Lifting Weights"
+        "Running"
       ],
-      "email": "John@hawaii.edu"
+      "email": "darquine@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Philip",
+      "lastName": "Johnson",
+      "bio": "I like to go running and try new things.",
+      "year": "Other",
+      "picture": "https://www.ics.hawaii.edu/wp-content/uploads/2019/05/johnson-300x300.jpeg",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "johnson@hawaii.edu"
+
+    },
+    {
+      "firstName": "James",
+      "lastName": "Peterson",
+      "bio": "I love staying active and doing things outdoors.",
+      "year": "Sophomore",
+      "picture": "https://i.pinimg.com/originals/b9/46/7e/b9467eba7fcb13d79bccb702658f4108.jpg",
+      "interests": [
+        "Swimming",
+        "Running"
+      ],
+      "email": "Jamespet@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Kayla",
+      "lastName": "Jefferson",
+      "bio": "I love being in the water and the beach is like my second home.",
+      "year": "Freshman",
+      "picture": "https://images.squarespace-cdn.com/content/v1/5ef6be9113b6083384e742d6/1593816642654-QOZBWG9WEIKR588RCQ6X/diya+pfp.JPG",
+      "interests": [
+        "Swimming",
+        "Surfing"
+      ],
+      "email": "kjeffer@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Lia",
+      "lastName": "Matsumoto",
+      "bio": "I just started working out and am trying to stay consistent.",
+      "year": "Freshman",
+      "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1XzbDUQRdYq7shpfivuJn2CD6XeAjJbPMWg&usqp=CAU",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Yoga"
+      ],
+      "email": "liamat@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Maria",
+      "lastName": "Jones",
+      "bio": "I love running and going on hikes with friends especially.",
+      "year": "Junior",
+      "picture": "https://static01.nyt.com/images/2020/05/29/magazine/7mag-education-student-selfies-08/7mag-education-student-selfies-08-mobileMasterAt3x.jpg",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "maria1@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jordyn",
+      "lastName": "White",
+      "bio": "I've been working out for 2 years now and would love to find some friends to do it with.",
+      "year": "Junior",
+      "picture": "https://i.pinimg.com/736x/24/35/74/24357447f52256b25ab785a912fde98d--freshman-year-selfies.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Volleyball"
+      ],
+      "email": "jnwhite@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Alexis",
+      "lastName": "Rodriguez",
+      "bio": "I love the gym, let's be friends!",
+      "year": "Sophomore",
+      "picture": "https://www.superprof.ng/images/teachers/teacher-home-college-student-excited-help-and-guide-you-through-any-academic-subject.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running"
+      ],
+      "email": "alexisr@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Rodger",
+      "lastName": "Whitman",
+      "bio": "Just getting into this workout stuff, any and all help is appreciated.",
+      "year": "Freshman",
+      "picture": "https://www.superprof.com.au/images/teachers/teacher-home-college-student-offering-exceptional-help-for-any-struggling-high-school-student-with-math-and-science.jpg",
+      "interests": [
+        "Weight lifting",
+        "Swimming"
+      ],
+      "email": "rodwhit@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Ashley",
+      "lastName": "White",
+      "bio": "I love working out in groups, the extra motivation really helps me.",
+      "year": "Senior",
+      "picture": "https://pbs.twimg.com/media/CxfgAdXUsAAUpgh?format=jpg&name=large",
+      "interests": [
+        "Running",
+        "Weight lifting"
+      ],
+      "email": "ashle1@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "George",
+      "lastName": "Bowden",
+      "bio": "Working out with friends helps clear my mind.",
+      "year": "Senior",
+      "picture": "https://cfcc.edu/wp-content/uploads/2019/10/6-300x257.jpg",
+      "interests": [
+        "Weight lifting"
+      ],
+      "email": "geobow@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Klyde",
+      "lastName": "Johnson",
+      "bio": "I would love to make new gym friends, don't be afraid to say hi!",
+      "year": "Junior",
+      "picture": "https://cdn.thecollegeinvestor.com/wp-content/uploads/2014/01/Nic-Mayne-237x300.png",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Hiking"
+      ],
+      "email": "klydej@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Matthew",
+      "lastName": "Auslander",
+      "bio": "Hi everyone, you can call me Matt, I love hiking, swimming, and all things outdoors.",
+      "year": "Junior",
+      "picture": "https://m.media-amazon.com/images/M/MV5BOThhOWM3ODMtYTg5Mi00YTk4LWFhY2UtZWQwZGY1ZDNhZDk2XkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+      "interests": [
+        "Hiking",
+        "Swimming"
+      ],
+      "email": "mattausl@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jonathan",
+      "lastName": "Brooks",
+      "bio": "I love weight lifting and have been for 4 years now.",
+      "year": "Sophomore",
+      "picture": "https://www.scu.edu/media/offices/provost/johnson-scholars/cohort-headshots-for-bios/class-of-2023/Gabe-Rodkey-1-360x359.JPG",
+      "interests": [
+        "Weight lifting"
+      ],
+      "email": "jbrooks@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "John",
+      "lastName": "Jackson",
+      "bio": "I love hiking here in Hawaii and would love to meet new people while doing so.",
+      "year": "Sophomore",
+      "picture": "https://www.al.com/resizer/l44tvCT_ya1cFRgYdwaciILaE_c=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/DSAYYVERT5DPZELVT77OO6KFUA.jpg",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "jjackson@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Mark",
+      "lastName": "Lue",
+      "bio": "Getting into working out more consistently, having friends that do the same helps me.",
+      "year": "Other",
+      "picture": "https://www.wjtv.com/wp-content/uploads/sites/72/2019/06/JESSY203_1560904860382.jpg_92832392_ver1.0.jpg?w=600&h=600&crop=1",
+      "interests": [
+        "Weight lifting",
+        "Running"
+      ],
+      "email": "markl@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jonah",
+      "lastName": "Parker",
+      "bio": "I like to play basketball and lift weights on my free time.",
+      "year": "Senior",
+      "picture": "https://daily-voice-res.cloudinary.com/image/upload/c_fill,dpr_auto,f_auto,q_auto:eco,w_640/Screen_Shot_2016-05-05_at_10.23.33_AM_a2emmk",
+      "interests": [
+        "Weight lifting",
+        "Basketball"
+      ],
+      "email": "jparker@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jordan",
+      "lastName": "Matthews",
+      "bio": "I love playing Volleyball and working out.",
+      "year": "Senior",
+      "picture": "https://i.ebayimg.com/images/g/eSMAAOSwfiZcpWI-/s-l300.jpg",
+      "interests": [
+        "Weight lifting",
+        "Volleyball"
+      ],
+      "email": "Jordm@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Elle",
+      "lastName": "Siu",
+      "bio": "I love going on runs and hiking with my friends.",
+      "year": "Freshman",
+      "picture": "https://media.istockphoto.com/photos/young-asian-woman-takign-a-selfie-picture-id1173427031?k=20&m=1173427031&s=612x612&w=0&h=wsL8hOM6geY8grq997FxYRJqQ3y4CZZP-UciUKCHALo=",
+      "interests": [
+        "Hiking",
+        "Running"
+      ],
+      "email": "ellesiu@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Ashley",
+      "lastName": "Douglas",
+      "bio": "Hi! You guys can call me Ash, I love yoga, running, and recently got into weight training.",
+      "year": "Junior",
+      "picture": "https://media.istockphoto.com/photos/student-in-library-picture-id1023549634?k=20&m=1023549634&s=612x612&w=0&h=bdgaOF6tgbkpeRHKEFnfQlB8STTqmegxdfsMaAriDK4=",
+      "interests": [
+        "Yoga",
+        "Running",
+        "Weight lifting"
+      ],
+      "email": "Ashdg@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Kyla",
+      "lastName": "Tanaka",
+      "bio": "I love going on hikes and yoga. Hope we can be friends!",
+      "year": "Sophomore",
+      "picture": "https://media.istockphoto.com/photos/student-in-library-picture-id1023549634?k=20&m=1023549634&s=612x612&w=0&h=bdgaOF6tgbkpeRHKEFnfQlB8STTqmegxdfsMaAriDK4=",
+      "interests": [
+        "Hiking",
+        "Yoga"
+      ],
+      "email": "ktanaka@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jasmine",
+      "lastName": "George",
+      "bio": "I love going to the beach and being outside in general.",
+      "year": "Sophomore",
+      "picture": "https://img.freepik.com/free-photo/asian-beautiful-woman-make-selfie_273609-2692.jpg?w=2000",
+      "interests": [
+        "Swimming",
+        "Surfing",
+        "Hiking"
+      ],
+      "email": "jasmineg@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Haley",
+      "lastName": "Towns",
+      "bio": "I like working out when I have the time and would love to have some people to do it with.",
+      "year": "Senior",
+      "picture": "https://static01.nyt.com/images/2017/02/15/learning/Fogel-Shrive1LN/Fogel-Shrive1LN-superJumbo.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Yoga"
+      ],
+      "email": "htowns@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jefferson",
+      "lastName": "Hill",
+      "bio": "I love lifting weights and playing pick up basketball!",
+      "year": "Senior",
+      "picture": "http://3.bp.blogspot.com/-z7k-vu3Ws60/VATttxuJJ-I/AAAAAAAAFyI/c40ATn-w8C0/s1600/photo.JPG",
+      "interests": [
+        "Weight lifting",
+        "Basketball"
+      ],
+      "email": "jeffersonh@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Michael",
+      "lastName": "Hutchison",
+      "bio": "Hi all! I'm Michael and like working out and staying healthy.",
+      "year": "Freshman",
+      "picture": "https://admissions.missouri.edu/wp-content/uploads/2019/03/Mustafa-_-563x338.jpg",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Volleyball"
+      ],
+      "email": "mhutchi@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Gregory",
+      "lastName": "Adams",
+      "bio": "Hi! Doing my best to stay active and healthy, lets do it together!",
+      "year": "Junior",
+      "picture": "https://www.colorado.edu/today/sites/default/files/styles/large_square_thumbnail/public/callout/santaella-gus.jpg?itok=atMHWgqc",
+      "interests": [
+        "Weight lifting",
+        "Running",
+        "Yoga"
+      ],
+      "email": "gadams@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Jocelyn",
+      "lastName": "Grant",
+      "bio": "Hey everyone! I love being outside and meeting new people.",
+      "year": "Senior",
+      "picture": "https://assets.teenvogue.com/photos/626b03180979f2c5ace0ab2b/16:9/w_992,h_558,c_limit/Pol_StudentJournalist_Apr28_PROMO.jpg",
+      "interests": [
+        "Hiking",
+        "Running",
+        "Yoga"
+      ],
+      "email": "Jogrant@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Mike",
+      "lastName": "Goldberg",
+      "bio": "I love being outside and enjoying the Hawaii weather",
+      "year": "Senior",
+      "picture": "https://www.jesus.cam.ac.uk/sites/default/files/styles/quote/public/quotes/tom-pic.jpg.jpeg?itok=hp_PyBSk",
+      "interests": [
+        "Hiking",
+        "Swimming",
+        "Surfing"
+      ],
+      "email": "mgoldbe@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Mia",
+      "lastName": "Velasquez",
+      "bio": "Hi everyone, I'm Mia and I love yoga and am very passionate about stay healthy.",
+      "year": "Freshman",
+      "picture": "https://images.pond5.com/charming-young-happy-woman-obesity-footage-093517739_iconm.jpeg",
+      "interests": [
+        "Hiking",
+        "Yoga"
+      ],
+      "email": "miavela@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Kayla",
+      "lastName": "Quinn",
+      "bio": "Hi everyone, I really enjoy the Hawaii weather and love spending time in it.",
+      "year": "Freshman",
+      "picture": "https://d3qi0qp55mx5f5.cloudfront.net/physicalsciences/i/basic_pages/EliseHinkle_LR.jpg?mtime=1650553923",
+      "interests": [
+        "Hiking",
+        "Swimming"
+      ],
+      "email": "kquinn@hawaii.edu"
+
+    },
+
+    {
+      "firstName": "Joe",
+      "lastName": "Silva",
+      "bio": "I like working out and playing sports.",
+      "year": "Junior",
+      "picture": "https://preview.redd.it/16m01bidoyd41.jpg?auto=webp&s=dd4f293a624b55940e828531edfcde965aac8bcc",
+      "interests": [
+        "Weight lifting",
+        "Basketball",
+        "Volleyball",
+        "Surfing"
+      ],
+      "email": "jsilva@hawaii.edu"
 
     }
 
@@ -48,7 +493,7 @@
       "interests": [
         "Running"
       ],
-      "skillLevel": "intermediate",
+      "skillLevel": "Intermediate",
       "location": "zoo parking lot",
       "owner": "grayson@hawaii.edu"
     },
@@ -62,9 +507,418 @@
       ],
       "skillLevel": "advanced",
       "location": "Pali Hwy Lookout",
-      "owner": "John@hawaii.edu"
-    }
-    ],
+      "owner": "johnson@hawaii.edu"
+    },
 
-  "loadAssetsFile":  false
+    {
+      "title": "Weightlifting",
+      "date": "Wednesday 4/27 12am",
+      "description": "Upper body workout",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Anytime Fitness Honolulu",
+      "owner": "tannerky@hawaii.edu"
+    },
+
+    {
+      "title": "Core workout",
+      "date": "Wednesday 4/27 10am",
+      "description": "Exercises to strengthen and work on abs",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Pali Hwy Lookout",
+      "owner": "liamat@hawaii.edu"
+    },
+
+    {
+      "title": "Strength Training",
+      "date": "Thursday 4/28 8am",
+      "description": "Workout major muscle groups for full body strength and coordination",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Powerhouse Gym Aiea",
+      "owner": "jnwhite@hawaii.edu"
+    },
+
+    {
+      "title": "Swimming laps",
+      "date": "Thursday 4/28 2pm",
+      "description": "Swimming laps around the pool, and practice different swimming strokes",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Moanalua Community pool",
+      "owner": "Jamespet@hawaii.edu"
+    },
+
+    {
+      "title": "Koko Head",
+      "date": "Thursday 4/28 10am",
+      "description": "Koko head hiking trail one time up and down",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Koko head trail",
+      "owner": "kyldej@hawaii.edu"
+    },
+
+    {
+      "title": "Diamond Head",
+      "date": "Friday 4/29 10am",
+      "description": "Diamond Head hiking trail one time up and down",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Diamond head trail",
+      "owner": "darquine@hawaii.edu"
+    },
+
+    {
+      "title": "1 mile run",
+      "date": "Thursday 4/28 12pm",
+      "description": "Morning 1 mile run while trying to improve my time",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Kakaako Park",
+      "owner": "maria1@hawaii.edu"
+    },
+
+    {
+      "title": "Yoga",
+      "date": "Friday 4/29 10am",
+      "description": "A combination of stretches, breath work, and meditation to release tension and stiffness",
+      "interests": [
+        "Yoga"
+      ],
+      "skillLevel": "Beginner",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "Ashdg@hawaii.edu"
+    },
+
+    {
+      "title": "Morning Surfing",
+      "date": "Saturday 4/30 10am",
+      "description": "Have some fun and come surfing with me.",
+      "interests": [
+        "Surfing"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Waimea Bay",
+      "owner": "kjeffer@hawaii.edu"
+    },
+
+    {
+      "title": "Manoa Falls",
+      "date": "Saturday 4/30 8am",
+      "description": "Hike the manoa falls trail in the morning",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Manoa Falls Trail",
+      "owner": "maria1@hawaii.edu"
+    },
+
+    {
+      "title": "Afternoon Run",
+      "date": "Saturday 4/30 12pm",
+      "description": "Afternoon as a warmup before I start my weight lifting workout",
+      "interests": [
+        "Running"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Ala Moana Park",
+      "owner": "John@hawaii.edu"
+    },
+
+    {
+      "title": "Beginner swimming lessons",
+      "date": "Saturday 4/30 2pm",
+      "description": "Going to a class to learn how to swim.",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Kalihi Valley District Swimming Pool",
+      "owner": "rodwhit@hawaii.edu"
+    },
+
+    {
+      "title": "Workout for lower body",
+      "date": "Sunday 5/1 9am",
+      "description": "Workout lower body. Includes weightlifting and machine workouts",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "24 Hour Fitness Kapolei",
+      "owner": "ashle1@hawaii.edu"
+    },
+
+    {
+      "title": "Full body weight lifting session",
+      "date": "Sunday 5/1 8am",
+      "description": "Doing things like pull ups, push ups, bench press etc. with and without weights",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Orangetheory Fitness",
+      "owner": "geobow@hawaii.edu"
+    },
+
+    {
+      "title": "Swimming training",
+      "date": "Sunday 5/1 12pm",
+      "description": "Training to get faster at swimming.",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Moanalua Swimming Pool",
+      "owner": "mattaus@hawaii.edu"
+    },
+
+    {
+      "title": "Weight lifting coach",
+      "date": "Monday 5/2 2pm",
+      "description": "New to weight lifting? Join me and I can show you the fundamentals for effective weight lifting",
+      "interests": [
+        "Weight lifting"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Powerhouse Gym",
+      "owner": "jbrooks@hawaii.edu"
+    },
+
+    {
+      "title": "Makapu'u Point Lighthouse",
+      "date": "Monday 5/2 10am",
+      "description": "Join me on this hike and enjoy the beautiful views.",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Makapu'u Point Lighthouse Trail",
+      "owner": "jjackson@hawaii.edu"
+    },
+
+    {
+      "title": "Morning Run",
+      "date": "Tuesday 5/3 12am",
+      "description": "Doing a morning run before I start working out.",
+      "interests": [
+        "Running",
+        "Weight Lifting"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Kakaako Park",
+      "owner": "markl@hawaii.edu"
+    },
+
+    {
+      "title": "Basketball Game",
+      "date": "Tuesday 5/3 4pm",
+      "description": "Looking for people to play a 3 v 3 game of basket ball with.",
+      "interests": [
+        "Basketball"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Kapiolani Park",
+      "owner": "jparker@hawaii.edu"
+    },
+
+    {
+      "title": "Volleyball Game",
+      "date": "Tuesday 5/3 2pm",
+      "description": "Join me for a couple of volleyball games on the beach.",
+      "interests": [
+        "Volleyball"
+      ],
+      "skillLevel": "advanced",
+      "location": "Waikiki Beach",
+      "owner": "Jordm@hawaii.edu"
+    },
+
+    {
+      "title": "Olomana Trail",
+      "date": "Tuesday 5/3 8am",
+      "description": "Hike the Olomana Trail with me and my friends.",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Olomana Trail",
+      "owner": "John@hawaii.edu"
+    },
+
+    {
+      "title": "Yoga Session into weight lifting",
+      "date": "Wednesday 5/4 5am",
+      "description": "Doing yoga first as a means of warming up, then going into weight lifting after.",
+      "interests": [
+        "Yoga",
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "Ashdg@hawaii.edu"
+    },
+
+    {
+      "title": "Waimano Falls",
+      "date": "Wednesday 5/4 10am",
+      "description": "My favorite place to hike. Look forward to seeing you join me!",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Advanced",
+      "location": "Wamano Falls Trail",
+      "owner": "ktanaka@hawaii.edu"
+    },
+
+    {
+      "title": "Beach Day",
+      "date": "Thursday 5/5 12am",
+      "description": "Join me at the beach and we can go surfing, and swimming.",
+      "interests": [
+        "Swimming",
+        "Surfing"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Hanauma Bay",
+      "owner": "jasmineg@hawaii.edu"
+    },
+
+    {
+      "title": "Casual Workout session",
+      "date": "Thursday 5/5 10am",
+      "description": "Just a casual workout session. Not going too hard just trying to workout while I have the time.",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Beginner",
+      "location": "Planet Fitness",
+      "owner": "htowns@hawaii.edu"
+    },
+
+    {
+      "title": "Basketball Game",
+      "date": "Tuesday 5/5 12pm",
+      "description": "Basketball game warmup, before I go do some ww=eight lifting",
+      "interests": [
+        "Basketball",
+        "WeightLifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Ewa Beach Basketball Court",
+      "owner": "jeffersonh@hawaii.edu"
+    },
+
+    {
+      "title": "Full body strength training",
+      "date": "Friday 5/6 10am",
+      "description": "Doing Cardio and strength training",
+      "interests": [
+        "Weight Lifting"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Powerhouse Gym",
+      "owner": "mhutchi@hawaii.edu"
+    },
+
+    {
+      "title": "Warmup Yoga and run",
+      "date": "Friday 5/6 8am",
+      "description": "Doing some yoga and running to warmup before lifting some weights",
+      "interests": [
+        "Yoga",
+        "Running"
+      ],
+      "skillLevel": "Beginner",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "gadams@hawaii.edu"
+    },
+
+    {
+      "title": "Aiea Loop",
+      "date": "Saturday 5/7 12pm",
+      "description": "Hike the Aiea Loop trail and enjoy the incredible views of Halawa Valley",
+      "interests": [
+        "Hiking"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Aiea Loop Trail",
+      "owner": "Jogrant@hawaii.edu"
+    },
+
+    {
+      "title": "Swimming, Surfing, Hiking",
+      "date": "Saturday 5/7 2pm",
+      "description": "Going to the beach to do some swimming and/or surfing, then going on a hiking trail later",
+      "interests": [
+        "Hiking",
+        "Swimming",
+        "Surfing"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Wakiki Beach",
+      "owner": "mgoldbe@hawaii.edu"
+    },
+
+    {
+      "title": "Yoga",
+      "date": "Sunday 5/8 5am",
+      "description": "Yoga session to relieve tension in the body",
+      "interests": [
+        "Yoga"
+      ],
+      "skillLevel": "Beginner",
+      "location": "UH Manoa Warrior Recreation Center",
+      "owner": "miavela@hawaii.edu"
+    },
+
+    {
+      "title": "Swim laps",
+      "date": "Sunday 5/8 10am",
+      "description": "Swimming laps around the loop to improve my swimming abilities, and my time.",
+      "interests": [
+        "Swimming"
+      ],
+      "skillLevel": "intermediate",
+      "location": "Pearl City District Park Swimming Pool",
+      "owner": "kquinn@hawaii.edu"
+    },
+
+    {
+      "title": "Basketball or Volleyball Game",
+      "date": "Sunday 5/8 10am",
+      "description": "Looking for people to play a game or two of basketball or volleyball with me and my friends",
+      "interests": [
+        "Basketball",
+        "Volleyball"
+      ],
+      "skillLevel": "Intermediate",
+      "location": "Ala Moana Beach Park",
+      "owner": "jsilva@hawaii.edu"
+    }
+  ],
+
+  "loadAssetsFile":  false,
+
+  "monti": {
+    "appId": "nN35bnjbnZPkimbMG",
+    "appSecret": "54ded906-f25f-47d1-8fdc-d83a23cac1ff"
+  }
 }
