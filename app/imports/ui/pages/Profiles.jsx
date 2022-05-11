@@ -77,9 +77,14 @@ class ProfilesPage extends React.Component {
     return (
       <div>
         <Header as="h1" textAlign='center' >All Profiles</Header>
-        <Container id="profile-list">
+        <Container id="profiles-page">
           <Card.Group style={{ paddingTop: '10px' }}>
-            {_.map(profileDataAll, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+            {_.map(profileDataAll, (profile, index) => {
+              if (profile.firstName) {
+                return <MakeCard key={index} profile={profile}/>;
+              }
+              return null;
+            })}
           </Card.Group>
         </Container>
       </div>

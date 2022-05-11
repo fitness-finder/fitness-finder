@@ -8,6 +8,7 @@ import { sessionsPage } from './sessions.page';
 import { yourProfilePage } from './yourProfile.page';
 import { addSessionPage } from './addsession.page';
 import { navBar } from './navbar.component';
+import { filterProfilesPage } from './findProfiles.page';
 
 /* global fixture:false, test:false */
 
@@ -46,6 +47,12 @@ test('Test that profiles page displays', async (testController) => {
   await navBar.gotoProfilesPage(testController);
   await profilesPage.isDisplayed(testController);
   await profilesPage.hasDefaultProfiles(testController);
+});
+
+test('Test that filter profiles page displays', async (testController) => {
+  await navBar.gotoFilterProfilesPage(testController);
+  await filterProfilesPage.isDisplayed(testController);
+  await filterProfilesPage.hasDefaultProfiles(testController);
 });
 
 test('Test that sessions page displays', async (testController) => {

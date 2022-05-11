@@ -97,7 +97,12 @@ class FindProfilePage extends React.Component {
             </Segment>
           </AutoForm>
           <Card.Group style={{ paddingTop: '10px' }}>
-            {_.map(profileData, (profile, index) => <MakeCard key={index} profile={profile}/>)}
+            {_.map(profileData, (profile, index) => {
+              if (profile.firstName) {
+                return <MakeCard key={index} profile={profile}/>;
+              }
+              return null;
+            })}
           </Card.Group>
         </Container>
       </div>

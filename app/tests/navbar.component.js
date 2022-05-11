@@ -21,6 +21,10 @@ class NavBar {
     await testController.click('#profilesMenuItem');
   }
 
+  async gotoFilterProfilesPage(testController) {
+    await testController.click('#findProfileMenuItem');
+  }
+
   async gotoYourProfilePage(testController) {
     await testController.click('#yourProfileMenuItem');
   }
